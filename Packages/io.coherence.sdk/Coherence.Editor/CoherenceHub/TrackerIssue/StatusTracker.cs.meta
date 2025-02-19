@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a752335a73c56f64699ddf9f7a595e1a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 301977
+  packageName: "coherence \u2013 Multiplayer Networking"
+  packageVersion: 1.4.2
+  assetPath: Packages/io.coherence.sdk/Coherence.Editor/CoherenceHub/TrackerIssue/StatusTracker.cs
+  uploadId: 733697

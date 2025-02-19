@@ -1,0 +1,421 @@
+command GenericCommand [id "6"]
+  name String
+  commandData Bytes
+  entityParam1 Entity
+  entityParam2 Entity
+  entityParam3 Entity
+  entityParam4 Entity
+
+component AssetId [id "16"]
+  value Int 
+  isFromGroup Bool 
+
+component GenericScale [id "17"]
+  value Vector3 [compression "None", sim-frames "true"]
+
+component GenericFieldInt0 [id "18"]
+  number Int [bits "32", range-min "-2147483648", range-max "2147483647", sim-frames "true"]
+
+component GenericFieldInt1 [id "19"]
+  number Int [bits "32", range-min "-2147483648", range-max "2147483647", sim-frames "true"]
+
+component GenericFieldInt2 [id "20"]
+  number Int [bits "32", range-min "-2147483648", range-max "2147483647", sim-frames "true"]
+
+component GenericFieldInt3 [id "21"]
+  number Int [bits "32", range-min "-2147483648", range-max "2147483647", sim-frames "true"]
+
+component GenericFieldInt4 [id "22"]
+  number Int [bits "32", range-min "-2147483648", range-max "2147483647", sim-frames "true"]
+
+component GenericFieldInt5 [id "23"]
+  number Int [bits "32", range-min "-2147483648", range-max "2147483647", sim-frames "true"]
+
+component GenericFieldInt6 [id "24"]
+  number Int [bits "32", range-min "-2147483648", range-max "2147483647", sim-frames "true"]
+
+component GenericFieldInt7 [id "25"]
+  number Int [bits "32", range-min "-2147483648", range-max "2147483647", sim-frames "true"]
+
+component GenericFieldInt8 [id "26"]
+  number Int [bits "32", range-min "-2147483648", range-max "2147483647", sim-frames "true"]
+
+component GenericFieldInt9 [id "27"]
+  number Int [bits "32", range-min "-2147483648", range-max "2147483647", sim-frames "true"]
+
+component GenericFieldUInt0 [id "28"]
+  number UInt [bits "32", range-min "0", range-max "4294967295", sim-frames "true"]
+
+component GenericFieldUInt1 [id "29"]
+  number UInt [bits "32", range-min "0", range-max "4294967295", sim-frames "true"]
+
+component GenericFieldUInt2 [id "30"]
+  number UInt [bits "32", range-min "0", range-max "4294967295", sim-frames "true"]
+
+component GenericFieldUInt3 [id "31"]
+  number UInt [bits "32", range-min "0", range-max "4294967295", sim-frames "true"]
+
+component GenericFieldUInt4 [id "32"]
+  number UInt [bits "32", range-min "0", range-max "4294967295", sim-frames "true"]
+
+component GenericFieldUInt5 [id "33"]
+  number UInt [bits "32", range-min "0", range-max "4294967295", sim-frames "true"]
+
+component GenericFieldUInt6 [id "34"]
+  number UInt [bits "32", range-min "0", range-max "4294967295", sim-frames "true"]
+
+component GenericFieldUInt7 [id "35"]
+  number UInt [bits "32", range-min "0", range-max "4294967295", sim-frames "true"]
+
+component GenericFieldUInt8 [id "36"]
+  number UInt [bits "32", range-min "0", range-max "4294967295", sim-frames "true"]
+
+component GenericFieldUInt9 [id "37"]
+  number UInt [bits "32", range-min "0", range-max "4294967295", sim-frames "true"]
+
+component GenericFieldBool0 [id "38"]
+  number Bool [sim-frames "true"]
+
+component GenericFieldBool1 [id "39"]
+  number Bool [sim-frames "true"]
+
+component GenericFieldBool2 [id "40"]
+  number Bool [sim-frames "true"]
+
+component GenericFieldBool3 [id "41"]
+  number Bool [sim-frames "true"]
+
+component GenericFieldBool4 [id "42"]
+  number Bool [sim-frames "true"]
+
+component GenericFieldBool5 [id "43"]
+  number Bool [sim-frames "true"]
+
+component GenericFieldBool6 [id "44"]
+  number Bool [sim-frames "true"]
+
+component GenericFieldBool7 [id "45"]
+  number Bool [sim-frames "true"]
+
+component GenericFieldBool8 [id "46"]
+  number Bool [sim-frames "true"]
+
+component GenericFieldBool9 [id "47"]
+  number Bool [sim-frames "true"]
+
+component GenericFieldFloat0 [id "48"]
+  number Float [compression "None", sim-frames "true"]
+
+component GenericFieldFloat1 [id "49"]
+  number Float [compression "None", sim-frames "true"]
+
+component GenericFieldFloat2 [id "50"]
+  number Float [compression "None", sim-frames "true"]
+
+component GenericFieldFloat3 [id "51"]
+  number Float [compression "None", sim-frames "true"]
+
+component GenericFieldFloat4 [id "52"]
+  number Float [compression "None", sim-frames "true"]
+
+component GenericFieldFloat5 [id "53"]
+  number Float [compression "None", sim-frames "true"]
+
+component GenericFieldFloat6 [id "54"]
+  number Float [compression "None", sim-frames "true"]
+
+component GenericFieldFloat7 [id "55"]
+  number Float [compression "None", sim-frames "true"]
+
+component GenericFieldFloat8 [id "56"]
+  number Float [compression "None", sim-frames "true"]
+
+component GenericFieldFloat9 [id "57"]
+  number Float [compression "None", sim-frames "true"]
+
+component GenericFieldDouble0 [id "58"]
+  number Float64 [compression "None", sim-frames "true"]
+
+component GenericFieldDouble1 [id "59"]
+  number Float64 [compression "None", sim-frames "true"]
+
+component GenericFieldDouble2 [id "60"]
+  number Float64 [compression "None", sim-frames "true"]
+
+component GenericFieldDouble3 [id "61"]
+  number Float64 [compression "None", sim-frames "true"]
+
+component GenericFieldDouble4 [id "62"]
+  number Float64 [compression "None", sim-frames "true"]
+
+component GenericFieldDouble5 [id "63"]
+  number Float64 [compression "None", sim-frames "true"]
+
+component GenericFieldDouble6 [id "64"]
+  number Float64 [compression "None", sim-frames "true"]
+
+component GenericFieldDouble7 [id "65"]
+  number Float64 [compression "None", sim-frames "true"]
+
+component GenericFieldDouble8 [id "66"]
+  number Float64 [compression "None", sim-frames "true"]
+
+component GenericFieldDouble9 [id "67"]
+  number Float64 [compression "None", sim-frames "true"]
+
+component GenericFieldVector0 [id "68"]
+  value Vector3 [compression "None", sim-frames "true"]
+
+component GenericFieldVector1 [id "69"]
+  value Vector3 [compression "None", sim-frames "true"]
+
+component GenericFieldVector2 [id "70"]
+  value Vector3 [compression "None", sim-frames "true"]
+
+component GenericFieldVector3 [id "71"]
+  value Vector3 [compression "None", sim-frames "true"]
+
+component GenericField2dVector0 [id "72"]
+  value Vector2 [compression "None", sim-frames "true"]
+
+component GenericField2dVector1 [id "73"]
+  value Vector2 [compression "None", sim-frames "true"]
+
+component GenericField2dVector2 [id "74"]
+  value Vector2 [compression "None", sim-frames "true"]
+
+component GenericField2dVector3 [id "75"]
+  value Vector2 [compression "None", sim-frames "true"]
+
+component GenericFieldString0 [id "76"]
+  name String [sim-frames "true"]
+
+component GenericFieldString1 [id "77"]
+  name String [sim-frames "true"]
+
+component GenericFieldString2 [id "78"]
+  name String [sim-frames "true"]
+
+component GenericFieldString3 [id "79"]
+  name String [sim-frames "true"]
+
+component GenericFieldString4 [id "80"]
+  name String [sim-frames "true"]
+
+component GenericFieldQuaternion0 [id "81"]
+  value Quaternion [bits "32", sim-frames "true"]
+
+component GenericFieldEntity0 [id "82"]
+  value Entity [sim-frames "true"]
+
+component GenericFieldEntity1 [id "83"]
+  value Entity [sim-frames "true"]
+
+component GenericFieldEntity2 [id "84"]
+  value Entity [sim-frames "true"]
+
+component GenericFieldEntity3 [id "85"]
+  value Entity [sim-frames "true"]
+
+component GenericFieldEntity4 [id "86"]
+  value Entity [sim-frames "true"]
+
+component GenericFieldEntity5 [id "87"]
+  value Entity [sim-frames "true"]
+
+component GenericFieldEntity6 [id "88"]
+  value Entity [sim-frames "true"]
+
+component GenericFieldEntity7 [id "89"]
+  value Entity [sim-frames "true"]
+
+component GenericFieldEntity8 [id "90"]
+  value Entity [sim-frames "true"]
+
+component GenericFieldEntity9 [id "91"]
+  value Entity [sim-frames "true"]
+
+component GenericFieldBytes0 [id "92"]
+  bytes Bytes [sim-frames "true"]
+
+component GenericFieldByte0 [id "93"]
+  number UInt8 [sim-frames "true"]
+
+component GenericFieldByte1 [id "94"]
+  number UInt8 [sim-frames "true"]
+
+component GenericFieldByte2 [id "95"]
+  number UInt8 [sim-frames "true"]
+
+component GenericFieldByte3 [id "96"]
+  number UInt8 [sim-frames "true"]
+
+component GenericFieldByte4 [id "97"]
+  number UInt8 [sim-frames "true"]
+
+component GenericFieldByte5 [id "98"]
+  number UInt8 [sim-frames "true"]
+
+component GenericFieldByte6 [id "99"]
+  number UInt8 [sim-frames "true"]
+
+component GenericFieldByte7 [id "100"]
+  number UInt8 [sim-frames "true"]
+
+component GenericFieldByte8 [id "101"]
+  number UInt8 [sim-frames "true"]
+
+component GenericFieldByte9 [id "102"]
+  number UInt8 [sim-frames "true"]
+
+component GenericFieldSByte0 [id "103"]
+  number Int8 [sim-frames "true"]
+
+component GenericFieldSByte1 [id "104"]
+  number Int8 [sim-frames "true"]
+
+component GenericFieldSByte2 [id "105"]
+  number Int8 [sim-frames "true"]
+
+component GenericFieldSByte3 [id "106"]
+  number Int8 [sim-frames "true"]
+
+component GenericFieldSByte4 [id "107"]
+  number Int8 [sim-frames "true"]
+
+component GenericFieldSByte5 [id "108"]
+  number Int8 [sim-frames "true"]
+
+component GenericFieldSByte6 [id "109"]
+  number Int8 [sim-frames "true"]
+
+component GenericFieldSByte7 [id "110"]
+  number Int8 [sim-frames "true"]
+
+component GenericFieldSByte8 [id "111"]
+  number Int8 [sim-frames "true"]
+
+component GenericFieldSByte9 [id "112"]
+  number Int8 [sim-frames "true"]
+
+component GenericFieldShort0 [id "113"]
+  number Int16 [sim-frames "true"]
+
+component GenericFieldShort1 [id "114"]
+  number Int16 [sim-frames "true"]
+
+component GenericFieldShort2 [id "115"]
+  number Int16 [sim-frames "true"]
+
+component GenericFieldShort3 [id "116"]
+  number Int16 [sim-frames "true"]
+
+component GenericFieldShort4 [id "117"]
+  number Int16 [sim-frames "true"]
+
+component GenericFieldShort5 [id "118"]
+  number Int16 [sim-frames "true"]
+
+component GenericFieldShort6 [id "119"]
+  number Int16 [sim-frames "true"]
+
+component GenericFieldShort7 [id "120"]
+  number Int16 [sim-frames "true"]
+
+component GenericFieldShort8 [id "121"]
+  number Int16 [sim-frames "true"]
+
+component GenericFieldShort9 [id "122"]
+  number Int16 [sim-frames "true"]
+
+component GenericFieldUShort0 [id "123"]
+  number UInt16 [sim-frames "true"]
+
+component GenericFieldUShort1 [id "124"]
+  number UInt16 [sim-frames "true"]
+
+component GenericFieldUShort2 [id "125"]
+  number UInt16 [sim-frames "true"]
+
+component GenericFieldUShort3 [id "126"]
+  number UInt16 [sim-frames "true"]
+
+component GenericFieldUShort4 [id "127"]
+  number UInt16 [sim-frames "true"]
+
+component GenericFieldUShort5 [id "128"]
+  number UInt16 [sim-frames "true"]
+
+component GenericFieldUShort6 [id "129"]
+  number UInt16 [sim-frames "true"]
+
+component GenericFieldUShort7 [id "130"]
+  number UInt16 [sim-frames "true"]
+
+component GenericFieldUShort8 [id "131"]
+  number UInt16 [sim-frames "true"]
+
+component GenericFieldUShort9 [id "132"]
+  number UInt16 [sim-frames "true"]
+
+component GenericFieldChar0 [id "133"]
+  number Char [sim-frames "true"]
+
+component GenericFieldChar1 [id "134"]
+  number Char [sim-frames "true"]
+
+component GenericFieldChar2 [id "135"]
+  number Char [sim-frames "true"]
+
+component GenericFieldChar3 [id "136"]
+  number Char [sim-frames "true"]
+
+component GenericFieldChar4 [id "137"]
+  number Char [sim-frames "true"]
+
+component GenericFieldChar5 [id "138"]
+  number Char [sim-frames "true"]
+
+component GenericFieldChar6 [id "139"]
+  number Char [sim-frames "true"]
+
+component GenericFieldChar7 [id "140"]
+  number Char [sim-frames "true"]
+
+component GenericFieldChar8 [id "141"]
+  number Char [sim-frames "true"]
+
+component GenericFieldChar9 [id "142"]
+  number Char [sim-frames "true"]
+
+component GenericFieldLong0 [id "143"]
+  number Int64 [sim-frames "true"]
+
+component GenericFieldLong1 [id "144"]
+  number Int64 [sim-frames "true"]
+
+component GenericFieldLong2 [id "145"]
+  number Int64 [sim-frames "true"]
+
+component GenericFieldLong3 [id "146"]
+  number Int64 [sim-frames "true"]
+
+component GenericFieldULong0 [id "147"]
+  number UInt64 [sim-frames "true"]
+
+component GenericFieldULong1 [id "148"]
+  number UInt64 [sim-frames "true"]
+
+component GenericFieldULong2 [id "149"]
+  number UInt64 [sim-frames "true"]
+
+component GenericFieldULong3 [id "150"]
+  number UInt64 [sim-frames "true"]
+
+component GenericFieldColor0 [id "151"]
+  value Color [bits "32", sim-frames "true"]
+
+component GenericFieldColor1 [id "152"]
+  value Color [bits "32", sim-frames "true"]
+
+### END OF GENERIC SCHEMA ###

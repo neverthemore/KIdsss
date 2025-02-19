@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39df2693899937a4494ba9dd2592dbf8, type: 3}
+  m_Name: First Steps Tutorial
+  m_EditorClassIdentifier: 
+  SampleDisplayName: 'Tutorial Project: First Steps'
+  PrefabFileName: 
+  Dependency: 0
+  SampleCategory: 1
+  CategoryDetail: Unity Project
+  Description: 'The First Steps project is a series of small sample scenes, each
+    one demonstrating one or more features of coherence.
+
+
+    If you''re a first
+    time user, we suggest to go through the scenes in the established order. They
+    will guide you through some key coherence and networking concepts.
+
+
+    Remember
+    that playing the scenes on your own only shows part of the picture. To fully
+    experience the networked aspects, you have to play them in the Editor plus one
+    or more built instances, and even better - with other people.
+
+
+    Click Open
+    In Browser to learn more.'
+  Preview: {fileID: 2800000, guid: bfda08f39f03a9247a1c8e94affb4931, type: 3}
+  Thumbnail: {fileID: 2800000, guid: 6f1f2066af1548c40bf7f401e5eced0e, type: 3}
+  ExternalUrl: https://docs.coherence.io/learning-coherence/first-steps-tutorial
+  Priority: -50

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e7e14c4c6491546d39ca6d86848ac938
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 301977
+  packageName: "coherence \u2013 Multiplayer Networking"
+  packageVersion: 1.4.2
+  assetPath: Packages/io.coherence.sdk/Coherence.Editor/VSAttribution.cs
+  uploadId: 733697

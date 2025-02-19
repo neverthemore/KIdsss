@@ -1,0 +1,20 @@
+{
+    "name": "Coherence",
+    "rootNamespace": "",
+    "references": [
+        "Coherence.Core",
+        "Coherence.Common",
+        "Coherence.ProtocolDef",
+        "Coherence.Log",
+        "Coherence.Utils"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

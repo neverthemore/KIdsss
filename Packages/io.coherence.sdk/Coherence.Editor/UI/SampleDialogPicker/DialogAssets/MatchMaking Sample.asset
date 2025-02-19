@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39df2693899937a4494ba9dd2592dbf8, type: 3}
+  m_Name: MatchMaking Sample
+  m_EditorClassIdentifier: 
+  SampleDisplayName: 'Connect Dialog: Matchmaking'
+  PrefabFileName: Matchmaking Dialog.prefab
+  Dependency: 0
+  SampleCategory: 0
+  CategoryDetail: Package Sample
+  Description: 'A UIToolkit Prefab that covers coherence Player Accounts with manual
+    authentication, together with our powerful Matchmaking using the coherence Lobbies
+    feature.
+
+
+    You will be able to login or logout from Player Accounts, find
+    suitable Lobbies automatically, integrated chat and persist game sessions even
+    when players close the application.
+
+
+    Using this Sample requires a coherence
+    Cloud project, you can find more information in the Cloud tab from the coherence
+    Hub window.
+
+
+    When you click Add To Scene, the Sample will be imported to
+    your project, and the prefab will be instanced in the active Scene.'
+  Preview: {fileID: 2800000, guid: c8ef59491ea3cf042bc1ceb5696fb035, type: 3}
+  Thumbnail: {fileID: 2800000, guid: aa5f3f6a1900ade478c94c3997da41a5, type: 3}
+  ExternalUrl: 
+  Priority: -3

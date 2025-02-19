@@ -1,0 +1,51 @@
+{
+  "name": "io.coherence.sdk",
+  "version": "1.4.3",
+  "displayName": "coherence",
+  "description": "A network engine that allows you to easily develop, iterate and operate connected games.",
+  "unity": "2021.3",
+  "documentationUrl": "https://docs.coherence.io/",
+  "changelogUrl": "https://docs.coherence.io/release-notes",
+  "licensesUrl": "https://coherence.io/sdk-license",
+  "keywords": [
+    "network"
+  ],
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "2.0.0",
+    "com.unity.mathematics": "1.2.6",
+    "com.unity.profiling.core": "1.0.2",
+    "nuget.moq": "2.0.0"
+  },
+  "author": {
+    "name": "coherence",
+    "email": "info@coherence.io",
+    "url": "https://coherence.io"
+  },
+  "samples": [
+    {
+      "displayName": "Connect Dialog: Rooms",
+      "description": "Room Connect Dialog Sample UI",
+      "path": "Samples~/RoomSample"
+    },
+    {
+      "displayName": "Connect Dialog: Worlds",
+      "description": "World Connect Dialog Sample UI",
+      "path": "Samples~/WorldSample"
+    },
+    {
+      "displayName": "Connect Dialog: Lobbies",
+      "description": "Lobby Connect Dialog Sample UI",
+      "path": "Samples~/LobbiesSample"
+    },
+    {
+      "displayName": "Connect Dialog: Matchmaking",
+      "description": "Matchmaking Connect Dialog Sample UI",
+      "path": "Samples~/MatchmakingSample"
+    },
+    {
+      "displayName": "Sample Scenes",
+      "description": "Learn coherence fundamentals with self contained sample Scenes",
+      "path": "Samples~/SampleScenes"
+    }
+  ]
+}
