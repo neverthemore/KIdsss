@@ -16,35 +16,39 @@ namespace Coherence.Generated
     using System.Runtime.InteropServices;
     using UnityEngine;
 
-    public struct _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 : IEntityCommand
+    public struct _0559c47b58cd7f3448fdc3a4cdd592d1_a583443744844345baf700de8d91b19e : IEntityCommand
     {
         [StructLayout(LayoutKind.Explicit)]
         public struct Interop
         {
             [FieldOffset(0)]
-            public Vector3 spawnPosition;
+            public Vector3 position;
+            [FieldOffset(12)]
+            public Vector3 direction;
         }
 
-        public static unsafe _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 FromInterop(System.IntPtr data, System.Int32 dataSize) 
+        public static unsafe _0559c47b58cd7f3448fdc3a4cdd592d1_a583443744844345baf700de8d91b19e FromInterop(System.IntPtr data, System.Int32 dataSize) 
         {
-            if (dataSize != 12) {
-                throw new System.Exception($"Given data size is not equal to the struct size. ({dataSize} != 12) " +
-                    "for command with ID 10");
+            if (dataSize != 24) {
+                throw new System.Exception($"Given data size is not equal to the struct size. ({dataSize} != 24) " +
+                    "for command with ID 7");
             }
 
-            var orig = new _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1();
+            var orig = new _0559c47b58cd7f3448fdc3a4cdd592d1_a583443744844345baf700de8d91b19e();
             var comp = (Interop*)data;
-            orig.spawnPosition = comp->spawnPosition;
+            orig.position = comp->position;
+            orig.direction = comp->direction;
             return orig;
         }
 
-        public Vector3 spawnPosition;
+        public Vector3 position;
+        public Vector3 direction;
         
         public Entity Entity { get; set; }
         public Coherence.ChannelID ChannelID { get; set; }
         public MessageTarget Routing { get; set; }
         public uint Sender { get; set; }
-        public uint GetComponentType() => 10;
+        public uint GetComponentType() => 7;
         
         public IEntityMessage Clone()
         {
@@ -82,9 +86,10 @@ namespace Coherence.Generated
         public void NullEntityRefs(Entity entity) {
         }
         
-        public _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1(
+        public _0559c47b58cd7f3448fdc3a4cdd592d1_a583443744844345baf700de8d91b19e(
         Entity entity,
-        Vector3 spawnPosition
+        Vector3 position,
+        Vector3 direction
 )
         {
             Entity = entity;
@@ -92,25 +97,31 @@ namespace Coherence.Generated
             Routing = MessageTarget.All;
             Sender = 0;
             
-            this.spawnPosition = spawnPosition; 
+            this.position = position; 
+            this.direction = direction; 
         }
         
-        public static void Serialize(_714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 commandData, IOutProtocolBitStream bitStream)
+        public static void Serialize(_0559c47b58cd7f3448fdc3a4cdd592d1_a583443744844345baf700de8d91b19e commandData, IOutProtocolBitStream bitStream)
         {
-            var converted_spawnPosition = commandData.spawnPosition.ToCoreVector3();
-            bitStream.WriteVector3(converted_spawnPosition, FloatMeta.NoCompression());
+            var converted_position = commandData.position.ToCoreVector3();
+            bitStream.WriteVector3(converted_position, FloatMeta.NoCompression());
+            var converted_direction = commandData.direction.ToCoreVector3();
+            bitStream.WriteVector3(converted_direction, FloatMeta.NoCompression());
         }
         
-        public static _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 Deserialize(IInProtocolBitStream bitStream, Entity entity, MessageTarget target)
+        public static _0559c47b58cd7f3448fdc3a4cdd592d1_a583443744844345baf700de8d91b19e Deserialize(IInProtocolBitStream bitStream, Entity entity, MessageTarget target)
         {
-            var converted_spawnPosition = bitStream.ReadVector3(FloatMeta.NoCompression());
-            var dataspawnPosition = converted_spawnPosition.ToUnityVector3();
+            var converted_position = bitStream.ReadVector3(FloatMeta.NoCompression());
+            var dataposition = converted_position.ToUnityVector3();
+            var converted_direction = bitStream.ReadVector3(FloatMeta.NoCompression());
+            var datadirection = converted_direction.ToUnityVector3();
     
-            return new _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1()
+            return new _0559c47b58cd7f3448fdc3a4cdd592d1_a583443744844345baf700de8d91b19e()
             {
                 Entity = entity,
                 Routing = target,
-                spawnPosition = dataspawnPosition
+                position = dataposition,
+                direction = datadirection
             };   
         }
     }

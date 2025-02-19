@@ -822,7 +822,6 @@ MonoBehaviour:
   coherenceTag: 
   componentActions:
   - rid: 7056912363428512268
-  - rid: 7056912363428512269
   - rid: 7056912363428512270
   - rid: 7056912363428512271
   floatingOriginMode: 0
@@ -1056,10 +1055,6 @@ MonoBehaviour:
       type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
       data:
         component: {fileID: 5221092905819149187}
-    - rid: 7056912363428512269
-      type: {class: DisableColliderComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 6831308413899845240}
     - rid: 7056912363428512270
       type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
       data:

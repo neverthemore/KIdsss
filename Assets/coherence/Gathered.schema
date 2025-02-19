@@ -1,19 +1,14 @@
-component _38b8b48420f3e7b4d9f82407a0b85e92_1555132992935451924 [id "153"]
-  enabled Bool [bits "1"]
-
-component _38b8b48420f3e7b4d9f82407a0b85e92_5221092905819149187 [id "154"]
-  enabled Bool [bits "1"]
-
-component _38b8b48420f3e7b4d9f82407a0b85e92_8724297961366402026 [id "155"]
-  enabled Bool [bits "1"]
-
-command _38b8b48420f3e7b4d9f82407a0b85e92_5800a6307a70485fbd722b11862f1ab5 [id "7", routing "All"]
-  damage Float [compression "None"]
-
-command _38b8b48420f3e7b4d9f82407a0b85e92_f154a7d7a6634ed290ea283016f405df [id "8", routing "All"]
+command _0559c47b58cd7f3448fdc3a4cdd592d1_a583443744844345baf700de8d91b19e [id "7", routing "All"]
   position Vector3 [compression "None"]
   direction Vector3 [compression "None"]
 
-command _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 [id "9", routing "All"]
+command _38b8b48420f3e7b4d9f82407a0b85e92_5800a6307a70485fbd722b11862f1ab5 [id "8", routing "All"]
+  damage Float [compression "None"]
+
+command _38b8b48420f3e7b4d9f82407a0b85e92_f154a7d7a6634ed290ea283016f405df [id "9", routing "All"]
+  position Vector3 [compression "None"]
+  direction Vector3 [compression "None"]
+
+command _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 [id "10", routing "All"]
   spawnPosition Vector3 [compression "None"]
 
