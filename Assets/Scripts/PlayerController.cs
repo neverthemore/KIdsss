@@ -16,10 +16,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update()
-    {
-      
-
-        // Движение
+    {   // Движение
         Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Vector3 move = transform.forward * moveInput.y + transform.right * moveInput.x;
         transform.position += move * _speed * Time.deltaTime;
