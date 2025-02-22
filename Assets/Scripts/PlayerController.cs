@@ -5,7 +5,7 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 1f;
     [SerializeField] private float _lookSensitivity = 2f;
     private CoherenceSync _sync;
     private Controls controls;
