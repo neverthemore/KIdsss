@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f84e9590bd0184eae2d5f7ef11ee44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRadius: 4.59
+  spawnRadius: 2.84
   prefabToSpawn: {fileID: 2815186648055439907, guid: 38b8b48420f3e7b4d9f82407a0b85e92, type: 3}
   gameplayVCam: {fileID: 787906002}
   lookAtPlayer: 0
