@@ -22,10 +22,10 @@ public class Controls : MonoBehaviour
         return isRunning;
        //return isRunning ? 1f : 0f;
     }
-    public float GetSit()
+    public bool GetSit()
     {
-        bool isSitted = inputActions.Player.Sit.ReadValue<bool>();
-        return isSitted ? 1f : 0f;
+        bool isSitted = inputActions.Player.Sit.IsPressed();
+        return isSitted;
     }
 
     void Awake()
