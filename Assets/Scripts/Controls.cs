@@ -10,14 +10,17 @@ public class Controls : MonoBehaviour
 
     public Vector2 GetMoving() { return inputActions.Player.Moving.ReadValue<Vector2>(); }
     public Vector2 GetLook() { return inputActions.Player.Look.ReadValue<Vector2>(); }
-    public float GetJump() { 
-        bool isJumped = inputActions.Player.Jump.triggered;
-        return isJumped ? 1f : 0f;
+    public bool GetJump() {
+        //bool isJumped = inputActions.Player.Jump.triggered;
+        bool isJumped = inputActions.Player.Jump.IsPressed();
+        return isJumped;
+        //return isJumped ? 1f : 0f;
     }
-    public float GetRun()
+    public bool GetRun()
     {
-        bool isRunning = inputActions.Player.Run.ReadValue<bool>();
-        return isRunning ? 1f : 0f;
+        bool isRunning = inputActions.Player.Run.IsPressed();
+        return isRunning;
+       //return isRunning ? 1f : 0f;
     }
     public float GetSit()
     {
