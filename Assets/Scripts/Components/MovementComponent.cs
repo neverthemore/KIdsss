@@ -22,6 +22,7 @@ public class MovementComponent : MonoBehaviour, IInitializable
     float _jumpUp;
 
     private CharacterController _characterController;
+    public CharacterController CharacterController { get { return _characterController; } } //Анимация
     private CoherenceSync _sync;
     private Controls controls;
 
@@ -41,7 +42,7 @@ public class MovementComponent : MonoBehaviour, IInitializable
     }
     private void FixedUpdate()
     {
-        MouseRotate();
+        MouseRotate();  
         Run();
         Sit();
         Move();
@@ -74,13 +75,13 @@ public class MovementComponent : MonoBehaviour, IInitializable
 
     private void Sit()
     {
-        if (controls.GetSit()) _currentSpeed = _sitSpeed;
-        else _currentSpeed = _walkSpeed;
+        if (controls.GetSit()) _currentSpeed = _sitSpeed;   //Возможно тут лучше StateMachine, тк через if делать не очень + сейчас баг с приседом есть
     }
 
     private void Run()
     {
         if (controls.GetRun()) _currentSpeed = _runSpeed;
+        else _currentSpeed = _walkSpeed;
     }
 
     private void MouseRotate()
