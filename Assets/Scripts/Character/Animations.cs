@@ -60,7 +60,7 @@ public class Animations : MonoBehaviour
         sit = isSit ? 1f : 0f;
 
         isRun = controls.GetRun();
-        run = isRun ? 1f : 0f;
+        run = (isRun && inputFwd != 0f) ? 1f : 0f;
 
         ToAnimator();
     }

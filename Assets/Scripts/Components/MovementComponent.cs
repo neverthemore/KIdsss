@@ -63,9 +63,10 @@ public class MovementComponent : MonoBehaviour, IInitializable
         Vector3 move = new Vector3();
         if (!controls.GetRun())
             move = transform.right * direction.x * _currentSpeed + transform.forward * direction.y * _currentSpeed;
-        else
-            move = transform.forward * Mathf.Abs(direction.y) * _currentSpeed;
-
+        else if (controls.GetRun() && direction == new Vector2(0f, 1f))
+            move = transform.forward * direction.y * _currentSpeed;
+        else if (controls.GetRun() && direction == new Vector2(0f, -1f))
+            move = new Vector3(0f, 0f, 0f);
         move.y = _jumpUp;        
         _characterController.Move(move * Time.fixedDeltaTime);
         
