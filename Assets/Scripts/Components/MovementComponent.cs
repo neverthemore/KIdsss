@@ -8,17 +8,17 @@ public class MovementComponent : MonoBehaviour, IInitializable
     
 
     [Header("Speed")]
-    [SerializeField] private float _walkSpeed = 0.1f;
-    [SerializeField] private float _runSpeed = 0.15f;
-    [SerializeField] private float _sitSpeed = 0.05f;
+    [SerializeField] private float _walkSpeed = 4f;
+    [SerializeField] private float _runSpeed = 6f;
+    [SerializeField] private float _sitSpeed = 2f;
 
     [Header("Sens")][SerializeField] 
     private float _lookSensetivity = 100f;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
 
     [Header("Jump")]
-    [SerializeField] private float _jumpForce = 0.2f;
-    [SerializeField] private float _gravityForce = -9.81f / 5;  //Делю на 5 из-за скейла модельки
+    [SerializeField] private float _jumpForce = 2f;
+    [SerializeField] private float _gravityForce = -9.81f;  //Делю на 5 из-за скейла модельки
     float _jumpUp;
 
     private CharacterController _characterController;
@@ -58,9 +58,15 @@ public class MovementComponent : MonoBehaviour, IInitializable
         }
         else if (_jumpUp < 0) _jumpUp = 0;
 
+      
         Vector2 direction = controls.GetMoving().normalized;
-        Vector3 move = transform.right * direction.x * _currentSpeed + transform.forward * direction.y * _currentSpeed;
-        move.y = _jumpUp;
+        Vector3 move = new Vector3();
+        if (!controls.GetRun())
+            move = transform.right * direction.x * _currentSpeed + transform.forward * direction.y * _currentSpeed;
+        else
+            move = transform.forward * Mathf.Abs(direction.y) * _currentSpeed;
+
+        move.y = _jumpUp;        
         _characterController.Move(move * Time.fixedDeltaTime);
         
     }
