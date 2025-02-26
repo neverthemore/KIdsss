@@ -6,6 +6,8 @@ public class InventorySystem : MonoBehaviour
     private ItemState PistolSlot;
     private ItemState MeleeWeaponSlot;
 
+    private ItemState _currentWeapon;
+
     private InventorySystem()
     {
         AssaultRifleSlot = new ItemState();
@@ -18,7 +20,7 @@ public class InventorySystem : MonoBehaviour
         if (weapon is AssaultRifle)
         {
             AssaultRifleSlot.AddItem(weapon);
-            Debug.Log("Автомат добавлен в инвентарь");
+            Debug.Log("Автомат добавлен в инвентарь"); //По хорошему лучше сделать логику добавления оружия у самого оружия (например как метод PickUp у оружия)
         }
         else if (weapon is Pistol)
         {

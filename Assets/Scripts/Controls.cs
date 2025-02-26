@@ -29,6 +29,12 @@ public class Controls : MonoBehaviour
         return isSitted;
     }
 
+    public bool GetInteraction()
+    {
+        bool isInteract = inputActions.Player.Interact.IsPressed();
+        return isInteract;
+    }
+
     void Awake()
     {
         inputActions = new InputSystem();

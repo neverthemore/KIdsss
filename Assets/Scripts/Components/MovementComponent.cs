@@ -1,6 +1,7 @@
 using Cinemachine;
 using Coherence.Toolkit;
 using UnityEngine;
+//using UnityEngine.UIElements;
 
 [RequireComponent (typeof(CharacterController))]
 public class MovementComponent : MonoBehaviour, IInitializable
@@ -14,7 +15,7 @@ public class MovementComponent : MonoBehaviour, IInitializable
 
     [Header("Sens")][SerializeField] 
     private float _lookSensetivity = 100f;
-    [SerializeField] private CinemachineVirtualCamera _virtualCamera;
+    [SerializeField] private Transform _cameraPivot;
 
     [Header("Jump")]
     [SerializeField] private float _jumpForce = 2f;
@@ -39,6 +40,7 @@ public class MovementComponent : MonoBehaviour, IInitializable
         _sync = GetComponent<CoherenceSync>();
         controls = GetComponent<Controls>();
         _characterController = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
     private void FixedUpdate()
     {
@@ -61,13 +63,15 @@ public class MovementComponent : MonoBehaviour, IInitializable
       
         Vector2 direction = controls.GetMoving().normalized;
         Vector3 move = new Vector3();
-        if (!controls.GetRun())
-            move = transform.right * direction.x * _currentSpeed + transform.forward * direction.y * _currentSpeed;
-        else if (controls.GetRun() && direction == new Vector2(0f, 1f))
-            move = transform.forward * direction.y * _currentSpeed;
-        else if (controls.GetRun() && direction == new Vector2(0f, -1f))
+
+        //’з че за код
+            move = transform.forward * direction.y * _currentSpeed + transform.right * direction.x * _currentSpeed;
+        if (controls.GetRun() && direction.y < 0)
             move = new Vector3(0f, 0f, 0f);
-        move.y = _jumpUp;        
+        //
+
+        move.y = _jumpUp; 
+        
         _characterController.Move(move * Time.fixedDeltaTime);
         
     }
@@ -94,16 +98,12 @@ public class MovementComponent : MonoBehaviour, IInitializable
     private void MouseRotate()
     {
         float mouseX = controls.GetLook().x * _lookSensetivity * Time.fixedDeltaTime;
-        //float mouseY = controls.GetLook().y * _lookSensetivity * Time.fixedDeltaTime;
+        float mouseY = controls.GetLook().y * _lookSensetivity * Time.fixedDeltaTime;
 
-        //xRotation += -mouseY;
-        //xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        //if (_virtualCamera != null)
-        //{
-        //    _virtualCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        //}
-
+        _cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
     }
 }
