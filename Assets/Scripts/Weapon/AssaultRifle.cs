@@ -5,9 +5,10 @@ public class AssaultRifle : BaseWeapon
     protected int _currentAmmo;
     protected int _maxAmmo;
 
-    protected override void Attack()
+    public override void Attack()
     {
         //Реализация атаки
         Debug.Log("Выстрел из автомата");
+        //Спавним префаб пули
     }
 }

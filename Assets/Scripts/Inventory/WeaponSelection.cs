@@ -6,9 +6,7 @@ public class WeaponSelection : MonoBehaviour, IInteractable
     //Скрипт на оружии (на сцене) для подбора
     //Возможно для подбираемых предметов нужно сделать базовый класс или интерфейс
     BaseWeapon weapon;
-
-    
-
+ 
     private void Start()
     {
         weapon = GetComponent<BaseWeapon>(); //Получаем оружие со сцены
@@ -18,7 +16,8 @@ public class WeaponSelection : MonoBehaviour, IInteractable
     {
         //Подбор оружия
         playerController.AddWeapon(weapon);
-        Destroy(gameObject);
+        weapon.Deactivate();
+        //Destroy(gameObject);
     }
 
     public void ShowPromt()
