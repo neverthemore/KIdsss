@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a39dce6e0f52c4b9bb1ae67e69c3c1, type: 3}
   m_Name: AssaultRifle
   m_EditorClassIdentifier: 
-  weapon: {fileID: 919132149155446097, guid: 096801377a0078042ba35e69f38663d3, type: 3}
+  _weaponPrefab: {fileID: 0}
   _name: "\u0410\u0432\u0442\u043E\u043C\u0430\u0442"
   _damage: 10
   _critDamage: 20

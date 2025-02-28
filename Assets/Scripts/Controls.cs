@@ -35,6 +35,12 @@ public class Controls : MonoBehaviour
         return isInteract;
     }
 
+    public bool GetFire()
+    {
+        bool isFire = inputActions.Player.Fire.IsPressed();
+        return isFire;
+    }
+
     void Awake()
     {
         inputActions = new InputSystem();

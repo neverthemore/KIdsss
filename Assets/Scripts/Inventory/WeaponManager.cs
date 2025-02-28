@@ -7,6 +7,9 @@ public class WeaponManager : MonoBehaviour
    //Переключает оружия в инвентаре + ввод
    private InventorySystem _inventorySystem;
    private ItemState _currentState;
+
+    private Controls _controls;
+
    public ItemState CurrentState { get { return _currentState; } }
 
     [SerializeField] private Transform _weaponParent;
@@ -14,13 +17,17 @@ public class WeaponManager : MonoBehaviour
     private void Start()
     {
         _inventorySystem = GetComponent<InventorySystem>();
+        _controls = GetComponent<Controls>();
     }
     private void Update()
     {
         HandleWeaponSwitchInput();
 
-        if (Input.GetMouseButtonDown(0))        
+        if (_controls.GetFire())
+        {
             Attack();
+        }
+            
         
             
 
