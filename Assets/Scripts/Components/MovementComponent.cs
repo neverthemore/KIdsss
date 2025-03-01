@@ -108,15 +108,15 @@ public class MovementComponent : MonoBehaviour, IInitializable
         xRotation -= mouseY;
         yRotation += mouseX;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        _cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        _cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);        
         _cameraAim.localRotation = Quaternion.Euler(0f, yRotation, 0f);
-        spine.Rotate(Vector3.up * mouseX);                 
+        spine.Rotate(Vector3.up * mouseX);
+        head.localRotation = Quaternion.Euler(xRotation, spine.localEulerAngles.y, 0f);
 
         if (Mathf.Abs(_cameraAim.eulerAngles.y - chara.eulerAngles.y) > 90f)
         {
             chara.localRotation = Quaternion.Lerp(chara.rotation, _cameraAim.rotation, Time.deltaTime*3);
-            spine.localRotation = Quaternion.Lerp(spine.localRotation, Quaternion.Euler(0f, 0f, 0f), Time.deltaTime*3);               
+            spine.localRotation = Quaternion.Lerp(spine.localRotation, Quaternion.Euler(0f, 0f, 0f), Time.deltaTime*3);            
         }
 
         if (controls.GetMoving() != Vector2.zero)

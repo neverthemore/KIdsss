@@ -14,14 +14,12 @@ public class Controls : MonoBehaviour
     public bool GetJump() {
         //bool isJumped = inputActions.Player.Jump.triggered;
         bool isJumped = inputActions.Player.Jump.IsPressed();
-        return isJumped;
-        //return isJumped ? 1f : 0f;
+        return isJumped;        
     }
     public bool GetRun()
     {
         bool isRunning = inputActions.Player.Run.IsPressed();
-        return isRunning;
-       //return isRunning ? 1f : 0f;
+        return isRunning;       
     }
     public bool GetSit()
     {

@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Animations : MonoBehaviour
 {
-    Animator animator;
-    MovementComponent movement;
-    Controls controls;
+    private Animator animator;
+    private MovementComponent movement;
+    private Controls controls;
+    private InventorySystem inventory;
 
     [SerializeField]
     float inputLeft;
@@ -30,6 +31,7 @@ public class Animations : MonoBehaviour
         animator = GetComponent<Animator>();
         movement = GetComponent<MovementComponent>();
         controls = GetComponent<Controls>();
+        inventory = GetComponent<InventorySystem>();
         inputLeft = 0f;
         inputFwd = 0f;
     }
