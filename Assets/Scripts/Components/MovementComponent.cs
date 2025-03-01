@@ -15,12 +15,17 @@ public class MovementComponent : MonoBehaviour, IInitializable
 
     [Header("Sens")][SerializeField] 
     private float _lookSensetivity = 100f;
-    [SerializeField] private Transform _cameraPivot;
+    [SerializeField] public Transform _cameraPivot;
+    [SerializeField] public Transform _cameraAim;
 
     [Header("Jump")]
     [SerializeField] private float _jumpForce = 2f;
     [SerializeField] private float _gravityForce = -9.81f;  //ƒелю на 5 из-за скейла модельки
     float _jumpUp;
+
+    public Transform spine;
+    public Transform mainSpine;
+    public Transform origin;
 
     private CharacterController _characterController;
     public CharacterController CharacterController { get { return _characterController; } } //јнимаци€
@@ -28,7 +33,9 @@ public class MovementComponent : MonoBehaviour, IInitializable
     private Controls controls;
 
     private float _currentSpeed;
-    private float xRotation;
+    private float coreRot;
+    private float xRotation;    
+    private float yRotation;
 
     private void Start()
     {
@@ -64,12 +71,12 @@ public class MovementComponent : MonoBehaviour, IInitializable
         Vector2 direction = controls.GetMoving().normalized;
         Vector3 move = new Vector3();
 
-        //’з че за код
-            move = transform.forward * direction.y * _currentSpeed + transform.right * direction.x * _currentSpeed;
+        //’з че за код (мой код)
+            move = origin.forward * direction.y * _currentSpeed + origin.right * direction.x * _currentSpeed;
         if (controls.GetRun() && direction.y < 0)
             move = new Vector3(0f, 0f, 0f);
         //
-
+        Debug.Log(_cameraAim.forward);
         move.y = _jumpUp; 
         
         _characterController.Move(move * Time.fixedDeltaTime);
@@ -101,9 +108,19 @@ public class MovementComponent : MonoBehaviour, IInitializable
         float mouseY = controls.GetLook().y * _lookSensetivity * Time.fixedDeltaTime;
 
         xRotation -= mouseY;
+        yRotation += mouseX;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
         _cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+        
+        spine.Rotate(Vector3.up * mouseX);  
+        origin.Rotate(Vector3.up * mouseX);
+        _cameraAim.localRotation = Quaternion.Euler(0f, yRotation, 0f);
+                
+        if (Mathf.Abs(spine.localRotation.y) > 1f / 2)
+        {
+            mainSpine.localRotation = Quaternion.Euler(0f, mainSpine.localEulerAngles.y + spine.localEulerAngles.y, 0f);
+            spine.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+
     }
 }

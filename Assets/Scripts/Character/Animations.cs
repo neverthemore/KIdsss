@@ -12,6 +12,9 @@ public class Animations : MonoBehaviour
     float inputFwd;
 
     [SerializeField]
+    float yRot;
+
+    [SerializeField]
     bool isSit;
     float sit;
 
@@ -38,6 +41,7 @@ public class Animations : MonoBehaviour
         animator.SetFloat("sit", sit);
         animator.SetFloat("jump", jump);
         animator.SetFloat("run", run);
+        animator.SetFloat("rot", yRot);
     }
 
 
@@ -61,6 +65,11 @@ public class Animations : MonoBehaviour
 
         isRun = controls.GetRun();
         run = (isRun && inputFwd != 0f) ? 1f : 0f;
+
+        
+        if (movement._cameraAim.localEulerAngles.y > 360-25f) yRot = -1f;
+        else if (movement._cameraAim.localEulerAngles.y > 70f) yRot = 1f;
+        else yRot = 0f;
 
         ToAnimator();
     }
