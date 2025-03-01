@@ -26,6 +26,7 @@ public class MovementComponent : MonoBehaviour, IInitializable
     public Transform spine;
     public Transform mainSpine;
     public Transform origin;
+    public Transform head;
 
     private CharacterController _characterController;
     public CharacterController CharacterController { get { return _characterController; } } //Анимация
@@ -111,7 +112,8 @@ public class MovementComponent : MonoBehaviour, IInitializable
         yRotation += mouseX;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         _cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        
+        head.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+
         spine.Rotate(Vector3.up * mouseX);  
         origin.Rotate(Vector3.up * mouseX);
         _cameraAim.localRotation = Quaternion.Euler(0f, yRotation, 0f);
