@@ -54,8 +54,8 @@ public class Animations : MonoBehaviour
         }           
         else 
         {
-            inputLeft = transform.InverseTransformDirection(movement.CharacterController.velocity).x;
-            inputFwd = transform.InverseTransformDirection(movement.CharacterController.velocity).z;
+            inputLeft = controls.GetMoving().x;
+            inputFwd = controls.GetMoving().y;
         }
         isJump = !movement.CharacterController.isGrounded;
         jump = isJump ? 1f : 0f;

@@ -9,9 +9,9 @@ public class MovementComponent : MonoBehaviour, IInitializable
     
 
     [Header("Speed")]
-    [SerializeField] private float _walkSpeed = 4f;
-    [SerializeField] private float _runSpeed = 6f;
-    [SerializeField] private float _sitSpeed = 2f;
+    [SerializeField] private float _walkSpeed = 2f;
+    [SerializeField] private float _runSpeed = 3f;
+    [SerializeField] private float _sitSpeed = 1f;
 
     [Header("Sens")][SerializeField] 
     private float _lookSensetivity = 100f;
@@ -23,10 +23,9 @@ public class MovementComponent : MonoBehaviour, IInitializable
     [SerializeField] private float _gravityForce = -9.81f;  //ƒелю на 5 из-за скейла модельки
     float _jumpUp;
 
-    public Transform spine;
-    public Transform mainSpine;
-    public Transform origin;
+    public Transform spine;    
     public Transform head;
+    public Transform chara;
 
     private CharacterController _characterController;
     public CharacterController CharacterController { get { return _characterController; } } //јнимаци€
@@ -50,7 +49,7 @@ public class MovementComponent : MonoBehaviour, IInitializable
         _characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
     }
-    private void FixedUpdate()
+    private void Update()
     {
         MouseRotate();  
         Run();
@@ -73,15 +72,13 @@ public class MovementComponent : MonoBehaviour, IInitializable
         Vector3 move = new Vector3();
 
         //’з че за код (мой код)
-            move = origin.forward * direction.y * _currentSpeed + origin.right * direction.x * _currentSpeed;
+            move = _cameraAim.forward * direction.y * _currentSpeed + _cameraAim.right * direction.x * _currentSpeed;
         if (controls.GetRun() && direction.y < 0)
             move = new Vector3(0f, 0f, 0f);
-        //
-        Debug.Log(_cameraAim.forward);
+        //        
         move.y = _jumpUp; 
         
-        _characterController.Move(move * Time.fixedDeltaTime);
-        
+        _characterController.Move(move * Time.fixedDeltaTime);        
     }
 
     private void Jump()
@@ -112,16 +109,20 @@ public class MovementComponent : MonoBehaviour, IInitializable
         yRotation += mouseX;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         _cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        head.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
-
-        spine.Rotate(Vector3.up * mouseX);  
-        origin.Rotate(Vector3.up * mouseX);
+        head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         _cameraAim.localRotation = Quaternion.Euler(0f, yRotation, 0f);
-                
-        if (Mathf.Abs(spine.localRotation.y) > 1f / 2)
+        spine.Rotate(Vector3.up * mouseX);                 
+
+        if (Mathf.Abs(_cameraAim.eulerAngles.y - chara.eulerAngles.y) > 90f)
         {
-            mainSpine.localRotation = Quaternion.Euler(0f, mainSpine.localEulerAngles.y + spine.localEulerAngles.y, 0f);
-            spine.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            chara.localRotation = Quaternion.Lerp(chara.rotation, _cameraAim.rotation, Time.deltaTime*3);
+            spine.localRotation = Quaternion.Lerp(spine.localRotation, Quaternion.Euler(0f, 0f, 0f), Time.deltaTime*3);               
+        }
+
+        if (controls.GetMoving() != Vector2.zero)
+        {
+            chara.localRotation = _cameraAim.rotation;
+            spine.localRotation = Quaternion.Lerp(spine.localRotation, Quaternion.Euler(0f, 0f, 0f), Time.deltaTime * 3);
         }
 
     }
