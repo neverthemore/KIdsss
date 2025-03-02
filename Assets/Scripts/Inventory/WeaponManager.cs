@@ -27,20 +27,16 @@ public class WeaponManager : MonoBehaviour
         {
             Attack();
         }
-            
-        
-            
-
-    }
+    }   
 
     private void HandleWeaponSwitchInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))  //Тут сделать через Controls, сейчас сделано через кейпад
-        {
+        if (_controls.GetMainWeapon())  //Тут сделать через Controls, сейчас сделано через кейпад
+        {//сделал через controls
             if (_inventorySystem.AssaulsRifleSlot.Item != null)
             SwitchWeapon(_inventorySystem.AssaulsRifleSlot);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (_controls.GetSecondWeapon())
         {
             if (_inventorySystem.MeleeWeaponSlot.Item != null)
                 SwitchWeapon(_inventorySystem.MeleeWeaponSlot);

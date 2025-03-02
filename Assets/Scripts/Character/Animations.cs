@@ -5,7 +5,7 @@ public class Animations : MonoBehaviour
     private Animator animator;
     private MovementComponent movement;
     private Controls controls;
-    private InventorySystem inventory;
+    private WeaponManager inventory;
 
     [SerializeField]
     float inputLeft;
@@ -26,12 +26,15 @@ public class Animations : MonoBehaviour
     [SerializeField]
     bool isRun;
     float run;
+
+    [SerializeField] bool withMainGun;
+    [SerializeField] bool withSecondGun;
     void Start()
     {
         animator = GetComponent<Animator>();
         movement = GetComponent<MovementComponent>();
         controls = GetComponent<Controls>();
-        inventory = GetComponent<InventorySystem>();
+        inventory = GetComponent<WeaponManager>();
         inputLeft = 0f;
         inputFwd = 0f;
     }
@@ -44,6 +47,8 @@ public class Animations : MonoBehaviour
         animator.SetFloat("jump", jump);
         animator.SetFloat("run", run);
         animator.SetFloat("rot", yRot);
+        animator.SetBool("mainGun", withMainGun);
+        animator.SetBool("secondGun", withSecondGun);
     }
 
 
@@ -66,12 +71,23 @@ public class Animations : MonoBehaviour
         sit = isSit ? 1f : 0f;
 
         isRun = controls.GetRun();
-        run = (isRun && inputFwd != 0f) ? 1f : 0f;
+        run = (isRun && inputFwd != 0f) ? 1f : 0f;        
 
-        
-        if (movement._cameraAim.localEulerAngles.y > 360-25f) yRot = -1f;
-        else if (movement._cameraAim.localEulerAngles.y > 70f) yRot = 1f;
-        else yRot = 0f;
+        if (inventory.CurrentState == null)
+        {
+            withMainGun = false;
+            withSecondGun = false;
+        }
+        else if (inventory.CurrentState.Item is MeleeWeapon)
+        {
+            withMainGun = false;
+            withSecondGun = true;
+        }
+        else
+        {
+            withMainGun = true;
+            withSecondGun = false;
+        }
 
         ToAnimator();
     }
