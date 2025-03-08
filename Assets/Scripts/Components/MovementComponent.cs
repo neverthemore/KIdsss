@@ -19,7 +19,7 @@ public class MovementComponent : MonoBehaviour, IInitializable
     [SerializeField] public Transform _cameraAim;
 
     [Header("Jump")]
-    [SerializeField] private float _jumpForce = 2f;
+    [SerializeField] private float _jumpForce = 3.4f;
     [SerializeField] private float _gravityForce = -9.81f;  //ƒелю на 5 из-за скейла модельки
     float _jumpUp;
 
@@ -65,20 +65,19 @@ public class MovementComponent : MonoBehaviour, IInitializable
         {
             _jumpUp += _gravityForce * Time.deltaTime;
         }
-        else if (_jumpUp < 0) _jumpUp = 0;
-
-      
+        else if (_jumpUp <= 0) _jumpUp = 0;
+        
         Vector2 direction = controls.GetMoving().normalized;
         Vector3 move = new Vector3();
-
+        move *= _currentSpeed;
         //’з че за код (мой код)
-            move = _cameraAim.forward * direction.y * _currentSpeed + _cameraAim.right * direction.x * _currentSpeed;
+        move = _cameraAim.forward * direction.y * _currentSpeed + _cameraAim.right * direction.x * _currentSpeed;        
         if (controls.GetRun() && direction.y < 0)
             move = new Vector3(0f, 0f, 0f);
-        //        
+             
         move.y = _jumpUp; 
         
-        _characterController.Move(move * Time.fixedDeltaTime);        
+        _characterController.Move(move * Time.deltaTime);        
     }
 
     private void Jump()

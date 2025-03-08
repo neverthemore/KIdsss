@@ -20,7 +20,7 @@ public class Animations : MonoBehaviour
     float sit;
 
     [SerializeField]
-    bool isJump;
+    bool isJump;    
     float jump;
 
     [SerializeField]
@@ -52,7 +52,7 @@ public class Animations : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
         if (controls.GetMoving() == new Vector2(0f, 0f))
         {
@@ -64,8 +64,15 @@ public class Animations : MonoBehaviour
             inputLeft = controls.GetMoving().x;
             inputFwd = controls.GetMoving().y;
         }
-        isJump = !movement.CharacterController.isGrounded;
-        jump = isJump ? 1f : 0f;
+
+        float raycastDistance = 0.1f;
+        int ground;
+        ground = LayerMask.NameToLayer("ground");
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance, ground))
+            isJump = false;
+        else isJump = true;            
+        jump = isJump ? 1f : 0f;        
 
         isSit = controls.GetSit();
         sit = isSit ? 1f : 0f;
