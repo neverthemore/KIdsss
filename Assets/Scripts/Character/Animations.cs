@@ -8,6 +8,13 @@ public class Animations : MonoBehaviour
     private WeaponManager inventory;
 
     [SerializeField]
+    Transform rightArmSpace;
+
+    [SerializeField]
+    Transform leftArmController;
+    Transform leftArmSpace;
+
+    [SerializeField]
     float inputLeft;
     [SerializeField]
     float inputFwd;
@@ -45,8 +52,7 @@ public class Animations : MonoBehaviour
         animator.SetFloat("y", inputFwd);
         animator.SetFloat("sit", sit);
         animator.SetFloat("jump", jump);
-        animator.SetFloat("run", run);
-        animator.SetFloat("rot", yRot);
+        animator.SetFloat("run", run);        
         animator.SetBool("mainGun", withMainGun);
         animator.SetBool("secondGun", withSecondGun);
     }
@@ -84,11 +90,22 @@ public class Animations : MonoBehaviour
         {
             withMainGun = false;
             withSecondGun = false;
+            rightArmSpace.localEulerAngles = new Vector3(63.705f, -49.353f, 38.923f);
+            rightArmSpace.localPosition = new Vector3(0.01f, 0.042f, 0.145f);
+
+            if (rightArmSpace.transform.Find("AssaultRifle") != null)
+                if (rightArmSpace.transform.Find("AssaultRifle").Find("leftHandPlace") != null)
+                {
+                    leftArmSpace = rightArmSpace.transform.Find("AssaultRifle").Find("leftHandPlace");
+                    leftArmController.position = leftArmSpace.position;
+                }
+            
+            
         }
         else if (inventory.CurrentState.Item is MeleeWeapon)
         {
             withMainGun = false;
-            withSecondGun = true;
+            withSecondGun = true;            
         }
         else
         {

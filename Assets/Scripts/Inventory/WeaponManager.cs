@@ -5,12 +5,12 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
    //Переключает оружия в инвентаре + ввод
-   private InventorySystem _inventorySystem;
-   private ItemState _currentState;
+    private InventorySystem _inventorySystem;
+    private ItemState _currentState;
 
-    private Controls _controls;
+    private Controls _controls;  
 
-   public ItemState CurrentState { get { return _currentState; } }
+    public ItemState CurrentState { get { return _currentState; } }
 
     [SerializeField] private Transform _weaponParent;
 
