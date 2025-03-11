@@ -8,17 +8,12 @@ public class Animations : MonoBehaviour
     private Controls controls;
     private WeaponManager inventory;
 
-    [SerializeField]
-    TwoBoneIKConstraint LeftHandIkConstraint;
-    [SerializeField]
-    TwoBoneIKConstraint RightHandIkConstraint;
+    [SerializeField] Transform WeaponPose;
 
-    [SerializeField]
-    Transform rightArmSpace;
-
-    [SerializeField]
-    Transform leftArmController;
-    Transform leftArmSpace;
+    //[SerializeField]
+    //TwoBoneIKConstraint LeftHandIkConstraint;
+    //[SerializeField]
+    //TwoBoneIKConstraint RightHandIkConstraint;    
 
     [SerializeField]
     float inputLeft;
@@ -45,7 +40,7 @@ public class Animations : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        movement = GetComponent<MovementComponent>();
+        //movement = GetComponent<MovementComponent>();
         controls = GetComponent<Controls>();
         inventory = GetComponent<WeaponManager>();
         inputLeft = 0f;
@@ -66,8 +61,9 @@ public class Animations : MonoBehaviour
 
     void Update()
     {
-        RightHandIkConstraint.weight = 0f;
-        LeftHandIkConstraint.weight = 0f;
+        //RightHandIkConstraint.weight = 1f;
+        //LeftHandIkConstraint.weight = 0f;
+        WeaponPose.localEulerAngles = new Vector3 (0f, 0f, 0f);
         if (controls.GetMoving() == new Vector2(0f, 0f))
         {
             inputLeft = 0f;
@@ -107,19 +103,9 @@ public class Animations : MonoBehaviour
         else
         {
             withMainGun = true;
-            withSecondGun = false;
-            LeftHandIkConstraint.weight = 1f;            
-            //RightHandIkConstraint.transform.localRotation = movement.;
-            rightArmSpace.transform.localEulerAngles = new Vector3(63.705f, -49.353f, 38.923f);
-            rightArmSpace.transform.localPosition = new Vector3(0.01f, 0.042f, 0.145f);
-            if (rightArmSpace.transform.Find("AssaultRifle").Find("leftHandPlace") != null)
-            {
-                rightArmSpace.transform.Find("AssaultRifle").localScale = new Vector3(0.05f, 0.05f, 0.05f);
-                leftArmSpace = rightArmSpace.transform.Find("AssaultRifle").Find("leftHandPlace");
-                leftArmController.position = leftArmSpace.position;
-                leftArmController.localRotation = leftArmSpace.localRotation;
-            }
-            
+            withSecondGun = false;            
+            //RightHandIkConstraint.weight = 1f;
+                  
         }
 
         ToAnimator();

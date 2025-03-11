@@ -23,9 +23,9 @@ public class MovementComponent : MonoBehaviour, IInitializable
     [SerializeField] private float _gravityForce = -9.81f;  //Делю на 5 из-за скейла модельки
     float _jumpUp;
 
-    public Transform spine;    
-    public Transform head;
-    public Transform chara;
+    //public Transform spine;    
+    //[SerializeField] private Transform head;
+    //public Transform chara;
 
     private CharacterController _characterController;
     public CharacterController CharacterController { get { return _characterController; } } //Анимация
@@ -38,7 +38,7 @@ public class MovementComponent : MonoBehaviour, IInitializable
     private float yRotation;
 
     private void Start()
-    {
+    {        
         Initialize();
     }
 
@@ -52,11 +52,11 @@ public class MovementComponent : MonoBehaviour, IInitializable
     private void Update()
     {
         MouseRotate();  
-        Run();
+        Run();        
         Sit();
         Move();
         Jump();
-        
+        //OnAnimatorMove();        
     }
 
     private void Move()
@@ -68,15 +68,15 @@ public class MovementComponent : MonoBehaviour, IInitializable
         else if (_jumpUp <= 0) _jumpUp = 0;
         
         Vector2 direction = controls.GetMoving().normalized;
-        Vector3 move = new Vector3();
-        move *= _currentSpeed;
-        //Хз че за код (мой код)
-        move = _cameraAim.forward * direction.y * _currentSpeed + _cameraAim.right * direction.x * _currentSpeed;        
-        if (controls.GetRun() && direction.y < 0)
-            move = new Vector3(0f, 0f, 0f);
-             
-        move.y = _jumpUp; 
+        Vector3 move = new Vector3();        
         
+        move = transform.forward * direction.y + transform.right * direction.x;
+        if (controls.GetRun() && direction.y < 0)
+            if (_currentSpeed == _runSpeed)
+                _currentSpeed = _walkSpeed;
+        
+        move.y = _jumpUp;
+        move *= _currentSpeed;
         _characterController.Move(move * Time.deltaTime);        
     }
 
@@ -99,6 +99,25 @@ public class MovementComponent : MonoBehaviour, IInitializable
         else _currentSpeed = _walkSpeed;
     }
 
+    private void OnAnimatorMove()
+    {
+        Vector2 direction = controls.GetMoving().normalized;
+        Vector3 move = new Vector3();
+        //Хз че за код (мой код)        
+        if (controls.GetRun() && direction.y < 0)
+            if (_currentSpeed == _runSpeed)
+                _currentSpeed = _walkSpeed;
+
+        move = _cameraAim.forward * direction.y * _currentSpeed + _cameraAim.right * direction.x * _currentSpeed;
+        move.y = _jumpUp;
+        move *= _currentSpeed;
+        _characterController.Move(move * Time.deltaTime);
+
+        // Отключаем влияние Root Motion на поворот
+        float mouseX = controls.GetLook().x * _lookSensetivity * Time.fixedDeltaTime;
+        transform.Rotate(Vector3.up * mouseX);
+    }
+
     private void MouseRotate()
     {
         float mouseX = controls.GetLook().x * _lookSensetivity * Time.fixedDeltaTime;
@@ -108,11 +127,14 @@ public class MovementComponent : MonoBehaviour, IInitializable
         yRotation += mouseX;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         _cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);        
-        _cameraAim.localRotation = Quaternion.Euler(0f, yRotation, 0f);
-        spine.Rotate(Vector3.up * mouseX);
+        transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
+        //_cameraAim.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        //head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        
+        /*spine.Rotate(Vector3.up * mouseX);
         head.localRotation = Quaternion.Euler(xRotation, spine.localEulerAngles.y, 0f);
 
-        if (Mathf.Abs(_cameraAim.eulerAngles.y - chara.eulerAngles.y) > 90f)
+        if (Mathf.Abs(_cameraAim.eulerAngles.y - chara.eulerAngles.y) > 60f)
         {
             chara.localRotation = Quaternion.Lerp(chara.rotation, _cameraAim.rotation, Time.deltaTime*3);
             spine.localRotation = Quaternion.Lerp(spine.localRotation, Quaternion.Euler(0f, 0f, 0f), Time.deltaTime*3);            
@@ -123,6 +145,6 @@ public class MovementComponent : MonoBehaviour, IInitializable
             chara.localRotation = _cameraAim.rotation;
             spine.localRotation = Quaternion.Lerp(spine.localRotation, Quaternion.Euler(0f, 0f, 0f), Time.deltaTime * 3);
         }
-
+        */
     }
 }

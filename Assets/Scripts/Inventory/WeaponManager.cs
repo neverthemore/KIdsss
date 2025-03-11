@@ -18,11 +18,12 @@ public class WeaponManager : MonoBehaviour
     {
         _inventorySystem = GetComponent<InventorySystem>();
         _controls = GetComponent<Controls>();
+        
     }
     private void Update()
     {
         HandleWeaponSwitchInput();
-
+        
         if (_controls.GetFire())
         {
             Attack();
