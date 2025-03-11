@@ -8,30 +8,17 @@ public class Animations : MonoBehaviour
     private Controls controls;
     private WeaponManager inventory;
 
-    [SerializeField] Transform WeaponPose;
+    [SerializeField] Transform WeaponPose;     
 
-    //[SerializeField]
-    //TwoBoneIKConstraint LeftHandIkConstraint;
-    //[SerializeField]
-    //TwoBoneIKConstraint RightHandIkConstraint;    
+    float inputLeft;    
+    float inputFwd;         
 
-    [SerializeField]
-    float inputLeft;
-    [SerializeField]
-    float inputFwd;
-
-    [SerializeField]
-    float yRot;
-
-    [SerializeField]
     bool isSit;
-    float sit;
+    float sit;    
 
-    [SerializeField]
     bool isJump;    
     float jump;
-
-    [SerializeField]
+    
     bool isRun;
     float run;
 
@@ -39,8 +26,7 @@ public class Animations : MonoBehaviour
     [SerializeField] bool withSecondGun;
     void Start()
     {
-        animator = GetComponent<Animator>();
-        //movement = GetComponent<MovementComponent>();
+        animator = GetComponent<Animator>();        
         controls = GetComponent<Controls>();
         inventory = GetComponent<WeaponManager>();
         inputLeft = 0f;
@@ -60,9 +46,7 @@ public class Animations : MonoBehaviour
 
 
     void Update()
-    {
-        //RightHandIkConstraint.weight = 1f;
-        //LeftHandIkConstraint.weight = 0f;
+    {        
         WeaponPose.localEulerAngles = new Vector3 (0f, 0f, 0f);
         if (controls.GetMoving() == new Vector2(0f, 0f))
         {
@@ -74,7 +58,7 @@ public class Animations : MonoBehaviour
             inputLeft = controls.GetMoving().x;
             inputFwd = controls.GetMoving().y;
         }
-
+        // прыжок не работает:((
         float raycastDistance = 0.1f;
         int ground;
         ground = LayerMask.NameToLayer("ground");
@@ -103,8 +87,7 @@ public class Animations : MonoBehaviour
         else
         {
             withMainGun = true;
-            withSecondGun = false;            
-            //RightHandIkConstraint.weight = 1f;
+            withSecondGun = false;                    
                   
         }
 

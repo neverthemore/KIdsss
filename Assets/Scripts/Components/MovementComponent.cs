@@ -56,7 +56,7 @@ public class MovementComponent : MonoBehaviour, IInitializable
         Sit();
         Move();
         Jump();
-        //OnAnimatorMove();        
+        //OnAnimatorMove();   не убирайте это пж я хз без этого не работает     
     }
 
     private void Move()
@@ -101,19 +101,24 @@ public class MovementComponent : MonoBehaviour, IInitializable
 
     private void OnAnimatorMove()
     {
+        if (!_characterController.isGrounded)
+        {
+            _jumpUp += _gravityForce * Time.deltaTime;
+        }
+        else if (_jumpUp <= 0) _jumpUp = 0;
+
         Vector2 direction = controls.GetMoving().normalized;
         Vector3 move = new Vector3();
-        //Хз че за код (мой код)        
+        
         if (controls.GetRun() && direction.y < 0)
             if (_currentSpeed == _runSpeed)
                 _currentSpeed = _walkSpeed;
 
-        move = _cameraAim.forward * direction.y * _currentSpeed + _cameraAim.right * direction.x * _currentSpeed;
+        move = _cameraAim.forward * direction.y + _cameraAim.right * direction.x;
         move.y = _jumpUp;
         move *= _currentSpeed;
         _characterController.Move(move * Time.deltaTime);
-
-        // Отключаем влияние Root Motion на поворот
+        
         float mouseX = controls.GetLook().x * _lookSensetivity * Time.fixedDeltaTime;
         transform.Rotate(Vector3.up * mouseX);
     }
@@ -127,24 +132,6 @@ public class MovementComponent : MonoBehaviour, IInitializable
         yRotation += mouseX;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         _cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);        
-        transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
-        //_cameraAim.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        //head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        
-        /*spine.Rotate(Vector3.up * mouseX);
-        head.localRotation = Quaternion.Euler(xRotation, spine.localEulerAngles.y, 0f);
-
-        if (Mathf.Abs(_cameraAim.eulerAngles.y - chara.eulerAngles.y) > 60f)
-        {
-            chara.localRotation = Quaternion.Lerp(chara.rotation, _cameraAim.rotation, Time.deltaTime*3);
-            spine.localRotation = Quaternion.Lerp(spine.localRotation, Quaternion.Euler(0f, 0f, 0f), Time.deltaTime*3);            
-        }
-
-        if (controls.GetMoving() != Vector2.zero)
-        {
-            chara.localRotation = _cameraAim.rotation;
-            spine.localRotation = Quaternion.Lerp(spine.localRotation, Quaternion.Euler(0f, 0f, 0f), Time.deltaTime * 3);
-        }
-        */
+        transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);        
     }
 }

@@ -2167,12 +2167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponPose: {fileID: 52989764307538160}
-  inputLeft: 0
-  inputFwd: 0
-  yRot: 0
-  isSit: 0
-  isJump: 0
-  isRun: 0
   withMainGun: 0
   withSecondGun: 0
 --- !u!1 &8308896989878615508
