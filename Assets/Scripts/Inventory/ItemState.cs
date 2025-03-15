@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemState
 {
-    private BaseWeapon Item;
+    public BaseWeapon Item { get; private set; }   
     //private bool IsEmpty => Item == null;
 
     public void AddItem(BaseWeapon item)
@@ -16,5 +16,14 @@ public class ItemState
         //+ создать экземпл€р этого оружи€ и выкинуть на сцену
     }
 
+    public void Activate(Transform parent)
+    {
+        Item.Activate(parent);
+    }
+
+    public void Deactivate()
+    {
+        Item.Deactivate();
+    }
 
 }

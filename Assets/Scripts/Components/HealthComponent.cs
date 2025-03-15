@@ -22,7 +22,7 @@ public class HealthComponent : MonoBehaviour, IDamageable, IInitializable
     {
         _currentHealth -= damage;
         _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
-
+        Debug.Log("Нанесен урон:" + damage);
         if (_currentHealth <= 0f)
         {
             Die();

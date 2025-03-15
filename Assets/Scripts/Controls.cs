@@ -14,19 +14,37 @@ public class Controls : MonoBehaviour
     public bool GetJump() {
         //bool isJumped = inputActions.Player.Jump.triggered;
         bool isJumped = inputActions.Player.Jump.IsPressed();
-        return isJumped;
-        //return isJumped ? 1f : 0f;
+        return isJumped;        
     }
     public bool GetRun()
     {
         bool isRunning = inputActions.Player.Run.IsPressed();
-        return isRunning;
-       //return isRunning ? 1f : 0f;
+        return isRunning;       
     }
     public bool GetSit()
     {
         bool isSitted = inputActions.Player.Sit.IsPressed();
         return isSitted;
+    }
+    public bool GetInteraction()
+    {
+        bool isInteract = inputActions.Player.Interact.IsPressed();
+        return isInteract;
+    }
+    public bool GetFire()
+    {
+        bool isFire = inputActions.Player.Fire.IsPressed();
+        return isFire;
+    }
+    public bool GetMainWeapon()
+    {
+        bool withMainGun = inputActions.Player.MainGun.IsPressed();
+        return withMainGun;
+    }
+    public bool GetSecondWeapon()
+    {
+        bool withSecondGun = inputActions.Player.SecondGun.IsPressed();
+        return withSecondGun;
     }
 
     void Awake()
