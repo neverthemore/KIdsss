@@ -1,10 +1,15 @@
-component _1f6d211ee21a19b4baabfb346451a0cd_8164198947455111373 [id "153"]
+component _1649b29844b2c644fa407af4a788e555_8065859479899050318 [id "153"]
+  y Float [compression "None"]
+  jump Float [compression "None"]
+  run Float [compression "None"]
+  mainGun Bool [bits "1"]
+  secondGun Bool [bits "1"]
+  sit Float [compression "None"]
+  x Float [compression "None"]
+
+component _1f6d211ee21a19b4baabfb346451a0cd_8164198947455111373 [id "154"]
   ids Bytes [bits "4072"]
 
-command _38b8b48420f3e7b4d9f82407a0b85e92_f154a7d7a6634ed290ea283016f405df [id "7", routing "All"]
-  position Vector3 [compression "None"]
-  direction Vector3 [compression "None"]
-
-command _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 [id "8", routing "All"]
+command _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 [id "7", routing "All"]
   spawnPosition Vector3 [compression "None"]
 

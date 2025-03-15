@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 3355903221118123979}
   - component: {fileID: 627577049022776067}
   - component: {fileID: 2919054460916812443}
-  - component: {fileID: 1538321722072521931}
+  - component: {fileID: 5926024238035936464}
   m_Layer: 0
   m_Name: character 1
   m_TagString: Player
@@ -767,7 +767,7 @@ MonoBehaviour:
   WeaponPose: {fileID: 1571878674117933409}
   withMainGun: 0
   withSecondGun: 0
---- !u!114 &1538321722072521931
+--- !u!114 &5926024238035936464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -827,6 +827,10 @@ MonoBehaviour:
     - component: {fileID: 627577049022776067}
       lodStepsActive: 1
     - component: {fileID: 2919054460916812443}
+      lodStepsActive: 1
+    - component: {fileID: 8280161896230461568}
+      lodStepsActive: 1
+    - component: {fileID: 2577452903883481039}
       lodStepsActive: 1
     - component: {fileID: 6312352376839950350}
       lodStepsActive: 1
@@ -1030,10 +1034,6 @@ MonoBehaviour:
       lodStepsActive: 1
     - component: {fileID: 4044709036071290474}
       lodStepsActive: 1
-    - component: {fileID: 8280161896230461568}
-      lodStepsActive: 1
-    - component: {fileID: 2577452903883481039}
-      lodStepsActive: 1
     GeneratesArchetypeDefinition: 0
   interpolationLocation: 1
   RigidbodyUpdateMode: 0
@@ -1061,9 +1061,16 @@ MonoBehaviour:
   unsyncedNetworkEntityPriority: 0
   preserveChildren: 0
   bindings:
-  - rid: 8787938301946626119
-  - rid: 8787938301946626121
-  - rid: 8787938301946626123
+  - rid: 8787938301946626273
+  - rid: 8787938301946626277
+  - rid: 8787938301946626291
+  - rid: 8787938301946626293
+  - rid: 8787938301946626295
+  - rid: 8787938301946626297
+  - rid: 8787938301946626299
+  - rid: 8787938301946626301
+  - rid: 8787938301946626307
+  - rid: 8787938301946626311
   onNetworkedInstantiation:
     m_PersistentCalls:
       m_Calls: []
@@ -1079,13 +1086,13 @@ MonoBehaviour:
   usingReflection: 0
   coherenceTag: 
   componentActions:
-  - rid: 8787938301946626125
-  - rid: 8787938301946626126
-  - rid: 8787938301946626127
-  - rid: 8787938301946626128
-  - rid: 8787938301946626129
-  - rid: 8787938301946626131
-  - rid: 8787938301946626149
+  - rid: 8787938301946626279
+  - rid: 8787938301946626280
+  - rid: 8787938301946626281
+  - rid: 8787938301946626282
+  - rid: 8787938301946626284
+  - rid: 8787938301946626285
+  - rid: 8787938301946626286
   floatingOriginMode: 0
   floatingOriginParentedMode: 1
   references:
@@ -1093,16 +1100,16 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 8787938301946626119
+    - rid: 8787938301946626273
       type: {class: PositionBinding, ns: Coherence.Toolkit.Bindings.TransformBindings, asm: Coherence.Toolkit}
       data:
         descriptor:
-          rid: 8787938301946626120
+          rid: 8787938301946626274
         routing: 0
         syncMode: 0
         isPredicted: 0
         predictionMode: 0
-        guid: 95c990e794534285abd8ee16da56e9d8
+        guid: ed23eaaa413f49138ea04b115279ebec
         archetypeData:
           type: 7
           minRange: 0
@@ -1115,9 +1122,9 @@ MonoBehaviour:
             precision: 0.001
             floatCompression: 0
         unityComponent: {fileID: 687488808580686409}
-        coherenceSync: {fileID: 1538321722072521931}
+        coherenceSync: {fileID: 5926024238035936464}
         interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
-    - rid: 8787938301946626120
+    - rid: 8787938301946626274
       type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
         name: position
@@ -1138,16 +1145,16 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
-    - rid: 8787938301946626121
+    - rid: 8787938301946626277
       type: {class: RotationBinding, ns: Coherence.Toolkit.Bindings.TransformBindings, asm: Coherence.Toolkit}
       data:
         descriptor:
-          rid: 8787938301946626122
+          rid: 8787938301946626278
         routing: 0
         syncMode: 0
         isPredicted: 0
         predictionMode: 0
-        guid: 26fc9690d8684baea2a9661fa686b604
+        guid: b3711d41388f4f33b4428d3674c9ab91
         archetypeData:
           type: 8
           minRange: 0
@@ -1160,9 +1167,9 @@ MonoBehaviour:
             precision: 0.00000008381903171539307
             floatCompression: 0
         unityComponent: {fileID: 687488808580686409}
-        coherenceSync: {fileID: 1538321722072521931}
+        coherenceSync: {fileID: 5926024238035936464}
         interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
-    - rid: 8787938301946626122
+    - rid: 8787938301946626278
       type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
         name: rotation
@@ -1183,16 +1190,274 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
-    - rid: 8787938301946626123
-      type: {class: ScaleBinding, ns: Coherence.Toolkit.Bindings.TransformBindings, asm: Coherence.Toolkit}
+    - rid: 8787938301946626279
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 5421936969919773760}
+    - rid: 8787938301946626280
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 5609577381484295876}
+    - rid: 8787938301946626281
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 8598410867970202564}
+    - rid: 8787938301946626282
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 6901660048968636330}
+    - rid: 8787938301946626284
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 3355903221118123979}
+    - rid: 8787938301946626285
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 627577049022776067}
+    - rid: 8787938301946626286
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 2919054460916812443}
+    - rid: 8787938301946626291
+      type: {class: FloatAnimatorParameterBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
         descriptor:
-          rid: 8787938301946626124
+          rid: 8787938301946626292
         routing: 0
         syncMode: 0
         isPredicted: 0
         predictionMode: 0
-        guid: f683b9ab1a8d4688b8df89c3e9f427e9
+        guid: c8149766004b458582371d680bde1481
+        archetypeData:
+          type: 4
+          minRange: -9223372036854775808
+          maxRange: -9223372036854775808
+          sampleRate: 20
+          floatCompression: 0
+          fields:
+          - type: 4
+            bits: 32
+            precision: 0.001
+            floatCompression: 0
+        unityComponent: {fileID: 8065859479899050318}
+        coherenceSync: {fileID: 5926024238035936464}
+        interpolationSettings: {fileID: 0}
+    - rid: 8787938301946626292
+      type: {class: AnimatorDescriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: y
+        monoAssemblyType: System.Single, mscorlib
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 1
+        valueSyncCallbackName: 
+        memberType: 64
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: UnityEngine.Animator, UnityEngine.AnimationModule,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        defaultSyncMode: 0
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.FloatAnimatorParameterBinding,
+            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+        parameterHash: -69523947
+    - rid: 8787938301946626293
+      type: {class: FloatAnimatorParameterBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 8787938301946626294
+        routing: 0
+        syncMode: 0
+        isPredicted: 0
+        predictionMode: 0
+        guid: 282c4d6f7d1f44bf9dd1a36767ee7b14
+        archetypeData:
+          type: 4
+          minRange: -9223372036854775808
+          maxRange: -9223372036854775808
+          sampleRate: 20
+          floatCompression: 0
+          fields:
+          - type: 4
+            bits: 32
+            precision: 0.001
+            floatCompression: 0
+        unityComponent: {fileID: 8065859479899050318}
+        coherenceSync: {fileID: 5926024238035936464}
+        interpolationSettings: {fileID: 0}
+    - rid: 8787938301946626294
+      type: {class: AnimatorDescriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: jump
+        monoAssemblyType: System.Single, mscorlib
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 1
+        valueSyncCallbackName: 
+        memberType: 64
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: UnityEngine.Animator, UnityEngine.AnimationModule,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        defaultSyncMode: 0
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.FloatAnimatorParameterBinding,
+            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+        parameterHash: -1481439722
+    - rid: 8787938301946626295
+      type: {class: FloatAnimatorParameterBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 8787938301946626296
+        routing: 0
+        syncMode: 0
+        isPredicted: 0
+        predictionMode: 0
+        guid: cf90ec20e78e48e3ad3c617d4f5f09c0
+        archetypeData:
+          type: 4
+          minRange: -9223372036854775808
+          maxRange: -9223372036854775808
+          sampleRate: 20
+          floatCompression: 0
+          fields:
+          - type: 4
+            bits: 32
+            precision: 0.001
+            floatCompression: 0
+        unityComponent: {fileID: 8065859479899050318}
+        coherenceSync: {fileID: 5926024238035936464}
+        interpolationSettings: {fileID: 0}
+    - rid: 8787938301946626296
+      type: {class: AnimatorDescriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: run
+        monoAssemblyType: System.Single, mscorlib
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 1
+        valueSyncCallbackName: 
+        memberType: 64
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: UnityEngine.Animator, UnityEngine.AnimationModule,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        defaultSyncMode: 0
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.FloatAnimatorParameterBinding,
+            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+        parameterHash: 1349952704
+    - rid: 8787938301946626297
+      type: {class: BoolAnimatorParameterBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 8787938301946626298
+        routing: 0
+        syncMode: 0
+        isPredicted: 0
+        predictionMode: 0
+        guid: a6ba6ee51a344108b70e138323d49057
+        archetypeData:
+          type: 3
+          minRange: 0
+          maxRange: 0
+          sampleRate: 20
+          floatCompression: 0
+          fields:
+          - type: 3
+            bits: 1
+            precision: 0
+            floatCompression: 0
+        unityComponent: {fileID: 8065859479899050318}
+        coherenceSync: {fileID: 5926024238035936464}
+        interpolationSettings: {fileID: 0}
+    - rid: 8787938301946626298
+      type: {class: AnimatorDescriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: mainGun
+        monoAssemblyType: System.Boolean, mscorlib
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 1
+        valueSyncCallbackName: 
+        memberType: 64
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: UnityEngine.Animator, UnityEngine.AnimationModule,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        defaultSyncMode: 0
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.BoolAnimatorParameterBinding,
+            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+        parameterHash: 1995038977
+    - rid: 8787938301946626299
+      type: {class: BoolAnimatorParameterBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 8787938301946626300
+        routing: 0
+        syncMode: 0
+        isPredicted: 0
+        predictionMode: 0
+        guid: a116e541526e4b3bab417a24e35d8b69
+        archetypeData:
+          type: 3
+          minRange: 0
+          maxRange: 0
+          sampleRate: 20
+          floatCompression: 0
+          fields:
+          - type: 3
+            bits: 1
+            precision: 0
+            floatCompression: 0
+        unityComponent: {fileID: 8065859479899050318}
+        coherenceSync: {fileID: 5926024238035936464}
+        interpolationSettings: {fileID: 0}
+    - rid: 8787938301946626300
+      type: {class: AnimatorDescriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: secondGun
+        monoAssemblyType: System.Boolean, mscorlib
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 1
+        valueSyncCallbackName: 
+        memberType: 64
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: UnityEngine.Animator, UnityEngine.AnimationModule,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        defaultSyncMode: 0
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.BoolAnimatorParameterBinding,
+            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+        parameterHash: -352232121
+    - rid: 8787938301946626301
+      type: {class: ScaleBinding, ns: Coherence.Toolkit.Bindings.TransformBindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 8787938301946626302
+        routing: 0
+        syncMode: 0
+        isPredicted: 0
+        predictionMode: 0
+        guid: 474db5ced5c34115a1e9a29ab10c0dda
         archetypeData:
           type: 7
           minRange: 0
@@ -1205,9 +1470,9 @@ MonoBehaviour:
             precision: 0.001
             floatCompression: 0
         unityComponent: {fileID: 687488808580686409}
-        coherenceSync: {fileID: 1538321722072521931}
+        coherenceSync: {fileID: 5926024238035936464}
         interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
-    - rid: 8787938301946626124
+    - rid: 8787938301946626302
       type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
         name: localScale
@@ -1228,34 +1493,98 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
-    - rid: 8787938301946626125
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+    - rid: 8787938301946626307
+      type: {class: FloatAnimatorParameterBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
-        component: {fileID: 2919054460916812443}
-    - rid: 8787938301946626126
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+        descriptor:
+          rid: 8787938301946626308
+        routing: 0
+        syncMode: 0
+        isPredicted: 0
+        predictionMode: 0
+        guid: 47e4f13324454607b388192a9643627b
+        archetypeData:
+          type: 4
+          minRange: -9223372036854775808
+          maxRange: -9223372036854775808
+          sampleRate: 20
+          floatCompression: 0
+          fields:
+          - type: 4
+            bits: 32
+            precision: 0.001
+            floatCompression: 0
+        unityComponent: {fileID: 8065859479899050318}
+        coherenceSync: {fileID: 5926024238035936464}
+        interpolationSettings: {fileID: 0}
+    - rid: 8787938301946626308
+      type: {class: AnimatorDescriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
-        component: {fileID: 627577049022776067}
-    - rid: 8787938301946626127
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+        name: sit
+        monoAssemblyType: System.Single, mscorlib
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 1
+        valueSyncCallbackName: 
+        memberType: 64
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: UnityEngine.Animator, UnityEngine.AnimationModule,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        defaultSyncMode: 0
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.FloatAnimatorParameterBinding,
+            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+        parameterHash: 1252092624
+    - rid: 8787938301946626311
+      type: {class: FloatAnimatorParameterBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
-        component: {fileID: 3355903221118123979}
-    - rid: 8787938301946626128
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+        descriptor:
+          rid: 8787938301946626312
+        routing: 0
+        syncMode: 0
+        isPredicted: 0
+        predictionMode: 1
+        guid: ac40bc2d3dad40738a15ee41106f660c
+        archetypeData:
+          type: 4
+          minRange: -9223372036854775808
+          maxRange: -9223372036854775808
+          sampleRate: 20
+          floatCompression: 0
+          fields:
+          - type: 4
+            bits: 32
+            precision: 0.001
+            floatCompression: 0
+        unityComponent: {fileID: 8065859479899050318}
+        coherenceSync: {fileID: 5926024238035936464}
+        interpolationSettings: {fileID: 0}
+    - rid: 8787938301946626312
+      type: {class: AnimatorDescriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
-        component: {fileID: 8598410867970202564}
-    - rid: 8787938301946626129
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 5609577381484295876}
-    - rid: 8787938301946626131
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 5421936969919773760}
-    - rid: 8787938301946626149
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 6901660048968636330}
+        name: x
+        monoAssemblyType: System.Single, mscorlib
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 1
+        valueSyncCallbackName: 
+        memberType: 64
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: UnityEngine.Animator, UnityEngine.AnimationModule,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        defaultSyncMode: 0
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.FloatAnimatorParameterBinding,
+            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+        parameterHash: -1931733373
 --- !u!1 &3170750366370732652
 GameObject:
   m_ObjectHideFlags: 0

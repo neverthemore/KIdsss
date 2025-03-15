@@ -17,16 +17,16 @@ MonoBehaviour:
   editorTarget: {fileID: 3009863619618609293, guid: 1649b29844b2c644fa407af4a788e555, type: 3}
   includeInSchema: 1
   objectProvider:
-    rid: 8787938301946626189
+    rid: 8787938301946626275
   objectInstantiator:
-    rid: 8787938301946626188
+    rid: 8787938301946626276
   references:
     version: 2
     RefIds:
-    - rid: 8787938301946626188
+    - rid: 8787938301946626275
+      type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data:
+        prefab: {fileID: 3009863619618609293, guid: 1649b29844b2c644fa407af4a788e555, type: 3}
+    - rid: 8787938301946626276
       type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data: 
-    - rid: 8787938301946626189
-      type: {class: ResourcesProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
-      data:
-        resourcesPath: character 1

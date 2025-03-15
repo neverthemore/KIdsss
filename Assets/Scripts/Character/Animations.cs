@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
-
+using Coherence.Toolkit; // Добавьте в начало файла
+using Coherence;
 public class Animations : MonoBehaviour
 {
     private Animator animator;
     private MovementComponent movement;
     private Controls controls;
     private WeaponManager inventory;
+    private CoherenceSync _coherenceSync;
 
     [SerializeField] Transform WeaponPose;     
 
@@ -26,6 +28,7 @@ public class Animations : MonoBehaviour
     [SerializeField] bool withSecondGun;
     void Start()
     {
+        _coherenceSync = GetComponent<CoherenceSync>();
         animator = GetComponent<Animator>();        
         controls = GetComponent<Controls>();
         inventory = GetComponent<WeaponManager>();
@@ -35,6 +38,8 @@ public class Animations : MonoBehaviour
 
     void ToAnimator()
     {
+        if (!_coherenceSync.HasStateAuthority) return;
+
         animator.SetFloat("x", inputLeft);
         animator.SetFloat("y", inputFwd);
         animator.SetFloat("sit", sit);
