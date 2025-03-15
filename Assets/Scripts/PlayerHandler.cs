@@ -10,7 +10,7 @@ public class PlayerHandler : MonoBehaviour
     public GameObject prefabToSpawn;
 
     [Header("Camera")]
-    public CinemachineFreeLook gameplayVCam;
+    public CinemachineVirtualCamera gameplayVCam;
     public bool lookAtPlayer = true;
     public bool followPlayer = true;
 
@@ -42,7 +42,7 @@ public class PlayerHandler : MonoBehaviour
         _player.name = "[local] Player";
 
         // Находим точку внутри префаба
-        _cameraAnchor = _player.transform.Find(anchorName);
+        _cameraAnchor = _player.transform.Find("CameraAim/CameraPivot");
 
         if (_cameraAnchor == null)
         {
@@ -52,10 +52,17 @@ public class PlayerHandler : MonoBehaviour
 
         if (gameplayVCam != null)
         {
-            if (followPlayer) gameplayVCam.Follow = _cameraAnchor;
-            if (lookAtPlayer) gameplayVCam.LookAt = _cameraAnchor;
+            gameplayVCam.transform.position = _cameraAnchor.position;
+            gameplayVCam.transform.rotation = _cameraAnchor.rotation;
+
+            gameplayVCam.Follow = _cameraAnchor;
+            gameplayVCam.LookAt = _cameraAnchor;
             gameplayVCam.gameObject.SetActive(true);
+
+            // 5. Принудительно обновляем камеру
+            CinemachineBrain.SoloCamera = gameplayVCam;
         }
+
     }
 
 

@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CharacterScene.unity
     guid: 95a4beda0b3b4e04db660489e26ca190
+  - enabled: 1
+    path: Assets/Scenes/animsTry.unity
+    guid: eeeb7f955f56f634c8af525d8c60baf6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2c7e3fd75be4f114ab06b6c23392031b, type: 3}
     io.coherence.simulator.build.options: {fileID: 11400000, guid: 5bc638024a266fa4d809e4740944f81b, type: 2}

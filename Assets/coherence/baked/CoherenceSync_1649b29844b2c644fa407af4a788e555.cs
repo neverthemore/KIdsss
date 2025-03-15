@@ -25,7 +25,7 @@ namespace Coherence.Generated
     using UnityEngine.Scripting;
     
     [UnityEngine.Scripting.Preserve]
-    public class Binding_559a906ac4599ee4b970dd78f6770b38_95c990e794534285abd8ee16da56e9d8 : PositionBinding
+    public class Binding_1649b29844b2c644fa407af4a788e555_95c990e794534285abd8ee16da56e9d8 : PositionBinding
     {   
         private global::UnityEngine.Transform CastedUnityComponent;
 
@@ -78,7 +78,7 @@ namespace Coherence.Generated
     }
     
     [UnityEngine.Scripting.Preserve]
-    public class Binding_559a906ac4599ee4b970dd78f6770b38_26fc9690d8684baea2a9661fa686b604 : RotationBinding
+    public class Binding_1649b29844b2c644fa407af4a788e555_26fc9690d8684baea2a9661fa686b604 : RotationBinding
     {   
         private global::UnityEngine.Transform CastedUnityComponent;
 
@@ -130,7 +130,7 @@ namespace Coherence.Generated
     }
     
     [UnityEngine.Scripting.Preserve]
-    public class Binding_559a906ac4599ee4b970dd78f6770b38_f683b9ab1a8d4688b8df89c3e9f427e9 : ScaleBinding
+    public class Binding_1649b29844b2c644fa407af4a788e555_f683b9ab1a8d4688b8df89c3e9f427e9 : ScaleBinding
     {   
         private global::UnityEngine.Transform CastedUnityComponent;
 
@@ -182,10 +182,10 @@ namespace Coherence.Generated
     }
 
     [UnityEngine.Scripting.Preserve]
-    public class CoherenceSync_559a906ac4599ee4b970dd78f6770b38 : CoherenceSyncBaked
+    public class CoherenceSync_1649b29844b2c644fa407af4a788e555 : CoherenceSyncBaked
     {
         private Entity entityId;
-        private Logger logger = Coherence.Log.Log.GetLogger<CoherenceSync_559a906ac4599ee4b970dd78f6770b38>();
+        private Logger logger = Coherence.Log.Log.GetLogger<CoherenceSync_1649b29844b2c644fa407af4a788e555>();
         
         
         
@@ -194,14 +194,14 @@ namespace Coherence.Generated
         
         private readonly Dictionary<string, Binding> bakedValueBindings = new Dictionary<string, Binding>()
         {
-            ["95c990e794534285abd8ee16da56e9d8"] = new Binding_559a906ac4599ee4b970dd78f6770b38_95c990e794534285abd8ee16da56e9d8(),
-            ["26fc9690d8684baea2a9661fa686b604"] = new Binding_559a906ac4599ee4b970dd78f6770b38_26fc9690d8684baea2a9661fa686b604(),
-            ["f683b9ab1a8d4688b8df89c3e9f427e9"] = new Binding_559a906ac4599ee4b970dd78f6770b38_f683b9ab1a8d4688b8df89c3e9f427e9(),
+            ["95c990e794534285abd8ee16da56e9d8"] = new Binding_1649b29844b2c644fa407af4a788e555_95c990e794534285abd8ee16da56e9d8(),
+            ["26fc9690d8684baea2a9661fa686b604"] = new Binding_1649b29844b2c644fa407af4a788e555_26fc9690d8684baea2a9661fa686b604(),
+            ["f683b9ab1a8d4688b8df89c3e9f427e9"] = new Binding_1649b29844b2c644fa407af4a788e555_f683b9ab1a8d4688b8df89c3e9f427e9(),
         };
         
         private Dictionary<string, Action<CommandBinding, CommandsHandler>> bakedCommandBindings = new Dictionary<string, Action<CommandBinding, CommandsHandler>>();
         
-        public CoherenceSync_559a906ac4599ee4b970dd78f6770b38()
+        public CoherenceSync_1649b29844b2c644fa407af4a788e555()
         {
         }
         
@@ -230,7 +230,7 @@ namespace Coherence.Generated
             {
                 default:
                     logger.Warning(Coherence.Log.Warning.ToolkitBakedSyncReceiveCommandUnhandled,
-                        $"CoherenceSync_559a906ac4599ee4b970dd78f6770b38 Unhandled command: {command.GetType()}.");
+                        $"CoherenceSync_1649b29844b2c644fa407af4a788e555 Unhandled command: {command.GetType()}.");
                     break;
             }
         }
@@ -269,7 +269,7 @@ namespace Coherence.Generated
         
         public override void Initialize(Entity entityId, CoherenceBridge bridge, IClient client, CoherenceInput input, Logger logger)
         {
-            this.logger = logger.With<CoherenceSync_559a906ac4599ee4b970dd78f6770b38>();
+            this.logger = logger.With<CoherenceSync_1649b29844b2c644fa407af4a788e555>();
             this.bridge = bridge;
             this.entityId = entityId;
             this.client = client;        
