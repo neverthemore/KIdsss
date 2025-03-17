@@ -192,12 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d635f54069f35784b81a4673465a737e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputLeft: 0
-  inputFwd: 0
-  yRot: 0
-  isSit: 0
-  isJump: 0
-  isRun: 0
+  WeaponPose: {fileID: 0}
   withMainGun: 0
   withSecondGun: 0
 --- !u!114 &365303434217599480

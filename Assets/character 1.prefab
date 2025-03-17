@@ -1034,6 +1034,8 @@ MonoBehaviour:
       lodStepsActive: 1
     - component: {fileID: 4044709036071290474}
       lodStepsActive: 1
+    - component: {fileID: 1483814393907021733}
+      lodStepsActive: 1
     GeneratesArchetypeDefinition: 0
   interpolationLocation: 1
   RigidbodyUpdateMode: 0
@@ -1089,10 +1091,9 @@ MonoBehaviour:
   - rid: 8787938301946626279
   - rid: 8787938301946626280
   - rid: 8787938301946626281
-  - rid: 8787938301946626282
   - rid: 8787938301946626284
   - rid: 8787938301946626285
-  - rid: 8787938301946626286
+  - rid: 3372227853778944166
   floatingOriginMode: 0
   floatingOriginParentedMode: 1
   references:
@@ -1100,6 +1101,10 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 3372227853778944166
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 2919054460916812443}
     - rid: 8787938301946626273
       type: {class: PositionBinding, ns: Coherence.Toolkit.Bindings.TransformBindings, asm: Coherence.Toolkit}
       data:
@@ -1202,10 +1207,6 @@ MonoBehaviour:
       type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
       data:
         component: {fileID: 8598410867970202564}
-    - rid: 8787938301946626282
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 6901660048968636330}
     - rid: 8787938301946626284
       type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
       data:
@@ -1214,10 +1215,6 @@ MonoBehaviour:
       type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
       data:
         component: {fileID: 627577049022776067}
-    - rid: 8787938301946626286
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 2919054460916812443}
     - rid: 8787938301946626291
       type: {class: FloatAnimatorParameterBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
@@ -1808,7 +1805,7 @@ Transform:
   m_GameObject: {fileID: 3727586658216065189}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.8, z: 0.003200397}
+  m_LocalPosition: {x: 0, y: 7.38, z: 0.003200397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1859,7 +1856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3eaba66faefde24792ffde1e65c0e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {fileID: 0}
+  point: {fileID: 1483814393907021733}
 --- !u!1 &4218689417465525419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,6 +2846,37 @@ Transform:
   - {fileID: 3607484327412278982}
   m_Father: {fileID: 5929330192920524680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6878122676397022115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1483814393907021733}
+  m_Layer: 0
+  m_Name: LookAt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1483814393907021733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878122676397022115}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4044709036071290474}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6938579283948362641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,7 +3032,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 2.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1483814393907021733}
   m_Father: {fileID: 6151208091442203276}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7437573541950386030
