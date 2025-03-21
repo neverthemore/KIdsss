@@ -17,6 +17,7 @@ public class WeaponSelection : MonoBehaviour, IInteractable
         //Подбор оружия
         playerController.AddWeapon(weapon);
         weapon.Deactivate();
+        weapon._playerCamera = GameObject.Find("CameraPivot");
         //Destroy(gameObject);
     }
 
