@@ -24,6 +24,10 @@ public class Animations : MonoBehaviour
     bool isRun;
     float run;
 
+    [Header("Footstep Sounds")]
+    [SerializeField] private AudioSource _footstepAudio;
+    
+
     [SerializeField] bool withMainGun;
     [SerializeField] bool withSecondGun;
     void Start()
@@ -34,6 +38,8 @@ public class Animations : MonoBehaviour
         inventory = GetComponent<WeaponManager>();
         inputLeft = 0f;
         inputFwd = 0f;
+        _footstepAudio = GetComponent<AudioSource>();
+        
     }
 
     void ToAnimator()
@@ -57,6 +63,7 @@ public class Animations : MonoBehaviour
         {
             inputLeft = 0f;
             inputFwd = 0f;
+           
         }           
         else 
         {
@@ -95,7 +102,18 @@ public class Animations : MonoBehaviour
             withSecondGun = false;                    
                   
         }
-
+        if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.35f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.35f)
+        {
+            if (_footstepAudio.isPlaying) return;
+            _footstepAudio.Play();
+        }
+        else
+        {
+            _footstepAudio.Stop();
+        }
         ToAnimator();
     }
+
+
+  
 }
