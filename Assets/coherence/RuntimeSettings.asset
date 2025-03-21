@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   schemaID: 9689827923f8c58d68dd39977d1ce23bfbfda2ab
   versionInfo: {fileID: 11400000, guid: 2191b6f902c97477baa32a7919010503, type: 2}
-  runtimeKey: 
+  runtimeKey: 0e162bc235cf4fd497a73b1df541cca6
   simulatorSlug: 
   localHost: 127.0.0.1
   localWorldUDPPort: 32001
@@ -28,9 +28,9 @@ MonoBehaviour:
   localHttpServerPort: 42006
   localDevelopmentMode: 1
   useDebugStreams: 0
-  organizationID: 
-  projectID: 
-  projectName: 
+  organizationID: cveuftboc4rb2mlp19m0
+  projectID: cveuftboc4rb2mlp19mg
+  projectName: Default Project
   transportType: 0
   transportConfiguration: 0
   replicationServerToken: 
