@@ -178,7 +178,6 @@ namespace Coherence.Generated
                 case 151: return GenericFieldColor0.FromInterop(data, dataSize, simFrames, simFramesCount);
                 case 152: return GenericFieldColor1.FromInterop(data, dataSize, simFrames, simFramesCount);
                 case 153: return _1649b29844b2c644fa407af4a788e555_8065859479899050318.FromInterop(data, dataSize, simFrames, simFramesCount);
-                case 154: return _1f6d211ee21a19b4baabfb346451a0cd_8164198947455111373.FromInterop(data, dataSize, simFrames, simFramesCount);
             }
 
             throw new ArgumentException($"Unkown component type {type}", nameof(type));
@@ -1892,17 +1891,6 @@ namespace Coherence.Generated
                     updater.UpdateComponent(entity, componentType, val, 22, component.FieldsMask, component.StoppedMask, frames);
 
                     return;
-                }
-                case 154:
-                {
-                    var orig = (_1f6d211ee21a19b4baabfb346451a0cd_8164198947455111373)component;
-                    var val = new _1f6d211ee21a19b4baabfb346451a0cd_8164198947455111373.Interop();
-
-                    fixed (void* pinnedPtrids = orig.ids) { val.ids = new ByteArray { Data = pinnedPtrids, Length =  orig.ids?.Length ?? 0 };
-
-                    updater.UpdateComponent(entity, componentType, val, 16, component.FieldsMask, component.StoppedMask, frames);
-
-}                    return;
                 }
             }
 

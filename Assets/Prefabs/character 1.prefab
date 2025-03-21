@@ -576,6 +576,7 @@ GameObject:
   - component: {fileID: 5926024238035936464}
   - component: {fileID: 1288068786266230193}
   - component: {fileID: 8741528814461004884}
+  - component: {fileID: 3874750555526423985}
   m_Layer: 0
   m_Name: character 1
   m_TagString: Player
@@ -982,6 +983,8 @@ MonoBehaviour:
       lodStepsActive: 1
     - component: {fileID: 8741528814461004884}
       lodStepsActive: 1
+    - component: {fileID: 3874750555526423985}
+      lodStepsActive: 1
     GeneratesArchetypeDefinition: 0
   interpolationLocation: 1
   RigidbodyUpdateMode: 0
@@ -1040,6 +1043,8 @@ MonoBehaviour:
   - rid: 8787938301946626284
   - rid: 8787938301946626285
   - rid: 3372227853778944166
+  - rid: 8787938438391267772
+  - rid: 8787938438391267773
   floatingOriginMode: 0
   floatingOriginParentedMode: 1
   references:
@@ -1528,6 +1533,14 @@ MonoBehaviour:
         oldName: 
         oldParameterAssemblyTypes: []
         parameterHash: -1931733373
+    - rid: 8787938438391267772
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 8741528814461004884}
+    - rid: 8787938438391267773
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 3874750555526423985}
 --- !u!82 &1288068786266230193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1641,6 +1654,19 @@ MonoBehaviour:
   _interactableLayers:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &3874750555526423985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3009863619618609293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2af63684653c642827e898aee085c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
 --- !u!1 &3170750366370732652
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b91f942a5214496b0e11eaedb54c36, type: 3}
   m_Name: RuntimeSettings
   m_EditorClassIdentifier: 
-  schemaID: 9689827923f8c58d68dd39977d1ce23bfbfda2ab
+  schemaID: f582a5b9ef8a3bd5b8502bf3126d92d7edcb56a4
   versionInfo: {fileID: 11400000, guid: 2191b6f902c97477baa32a7919010503, type: 2}
   runtimeKey: 0e162bc235cf4fd497a73b1df541cca6
   simulatorSlug: 

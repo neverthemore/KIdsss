@@ -7,9 +7,6 @@ component _1649b29844b2c644fa407af4a788e555_8065859479899050318 [id "153"]
   sit Float [compression "None"]
   x Float [compression "None"]
 
-component _1f6d211ee21a19b4baabfb346451a0cd_8164198947455111373 [id "154"]
-  ids Bytes [bits "4072"]
-
 command _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 [id "7", routing "All"]
   spawnPosition Vector3 [compression "None"]
 
