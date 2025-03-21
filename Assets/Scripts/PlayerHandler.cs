@@ -6,7 +6,10 @@ using Cinemachine;
 
 public class PlayerHandler : MonoBehaviour
 {
-    public float spawnRadius = 1f;
+    [Header("Spawn Settings")]
+    public Transform[] spawnPoints; // Массив точек спавна
+    public float spawnRadius = 1f; // Fallback радиус, если нет точек
+
     public GameObject prefabToSpawn;
 
     [Header("Camera")]
@@ -33,15 +36,27 @@ public class PlayerHandler : MonoBehaviour
     private void OnConnection(CoherenceBridge bridge) => SpawnPlayer();
     private void OnDisconnection(CoherenceBridge bridge, ConnectionCloseReason reason) => DespawnPlayer();
 
-    private void SpawnPlayer()
+
+    private Vector3 GetRandomSpawnPosition()
     {
+        // Если есть точки спавна - выбираем случайную
+        if (spawnPoints != null && spawnPoints.Length > 0)
+        {
+            return spawnPoints[Random.Range(0, spawnPoints.Length)].position;
+        }
+
+        // Fallback на старую логику с радиусом
         Vector3 initialPosition = transform.position + Random.insideUnitSphere * spawnRadius;
         initialPosition.y = transform.position.y;
+        return initialPosition;
+    }
+    private void SpawnPlayer()
+    {
+        Vector3 spawnPosition = GetRandomSpawnPosition();
 
-        _player = Instantiate(prefabToSpawn, initialPosition, Quaternion.identity);
+        _player = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
         _player.name = "[local] Player";
 
-        // Находим точку внутри префаба
         _cameraAnchor = _player.transform.Find("CameraAim/CameraPivot");
 
         if (_cameraAnchor == null)
@@ -59,13 +74,18 @@ public class PlayerHandler : MonoBehaviour
             gameplayVCam.LookAt = _cameraAnchor;
             gameplayVCam.gameObject.SetActive(true);
 
-            // 5. Принудительно обновляем камеру
             CinemachineBrain.SoloCamera = gameplayVCam;
         }
-
     }
 
-
+    public void RespawnPlayer()
+    {
+        if (_player != null)
+        {
+            Destroy(_player);
+        }
+        SpawnPlayer();
+    }
     private void DespawnPlayer()
     {
         Destroy(_player);
