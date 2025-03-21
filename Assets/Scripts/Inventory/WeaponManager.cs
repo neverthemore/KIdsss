@@ -9,7 +9,6 @@ public class WeaponManager : MonoBehaviour
     private ItemState _currentState;
 
     private Controls _controls;  
-
     public ItemState CurrentState { get { return _currentState; } }
 
     [SerializeField] private Transform _weaponParent;
