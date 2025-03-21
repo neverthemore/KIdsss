@@ -56,6 +56,7 @@ public class WeaponManager : MonoBehaviour
         if (_currentState.Item != null)
         {
             _currentState?.Activate(_weaponParent);
+            //Тут или в самом оружие привязываешь все что надо (IK Constraint)
         }
     }
 

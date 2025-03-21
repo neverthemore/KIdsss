@@ -8,11 +8,18 @@ public class InventorySystem : MonoBehaviour
     public ItemState AssaulsRifleSlot { get { return _assaultRifleSlot; } }
     public ItemState MeleeWeaponSlot { get { return _meleeWeaponSlot; } }
 
-    private InventorySystem()
+    private void Start()
     {
         _assaultRifleSlot = new ItemState();
         _meleeWeaponSlot = new ItemState();
     }
+
+    /*
+    private InventorySystem()   Конуструкторы не работают
+    {
+        _assaultRifleSlot = new ItemState();
+        _meleeWeaponSlot = new ItemState();
+    }*/ 
 
     public void AddWeapon(BaseWeapon weapon)
     {

@@ -216,10 +216,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def1ad12e5eafc344863cc8bec4b1d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerCamera: {fileID: 0}
   _weaponData: {fileID: 11400000, guid: 5ad985cb828235448b325700a03abb48, type: 2}
   _maxAmmo: 100
   _range: 1000
-  _playerCamera: {fileID: 0}
 --- !u!65 &3389598275908277006
 BoxCollider:
   m_ObjectHideFlags: 0
