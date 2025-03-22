@@ -1,6 +1,5 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
 
 [RequireComponent(typeof(InventorySystem))]
 public class WeaponManager : MonoBehaviour
@@ -12,15 +11,12 @@ public class WeaponManager : MonoBehaviour
     private Controls _controls;  
     public ItemState CurrentState { get { return _currentState; } }
 
-    private Animations _animations;
-
     [SerializeField] private Transform _weaponParent;
 
     private void Start()
     {
         _inventorySystem = GetComponent<InventorySystem>();
         _controls = GetComponent<Controls>();
-        _animations = GetComponent<Animations>();
         
     }
     private void Update()
@@ -60,9 +56,6 @@ public class WeaponManager : MonoBehaviour
         if (_currentState.Item != null)
         {
             _currentState?.Activate(_weaponParent);
-            Transform left = GameObject.Find("LeftArmSpace").transform;
-            Transform right = GameObject.Find("RightArmSpace").transform;
-            _animations.HandsToGun(left, right);
             //Тут или в самом оружие привязываешь все что надо (IK Constraint)
         }
     }
