@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2795782807605764998}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-7714218557116069331
 MonoBehaviour:
@@ -83,7 +83,7 @@ MonoBehaviour:
   OnInputSimulatorConnected:
     m_PersistentCalls:
       m_Calls: []
-  coherenceSyncConfig: {fileID: 11400000, guid: 4c8eccc7e12fb6241a6cdde67ac43d3d, type: 2}
+  coherenceSyncConfig: {fileID: 11400000, guid: 27b724b3754f94c2691a153d83f0e9a6, type: 2}
   archetype:
     lodLevels:
     - distance: 0

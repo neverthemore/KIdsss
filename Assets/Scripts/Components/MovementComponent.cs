@@ -1,5 +1,6 @@
 using Cinemachine;
 using Coherence.Toolkit;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 //using UnityEngine.UIElements;
 
@@ -131,7 +132,8 @@ public class MovementComponent : MonoBehaviour, IInitializable
         xRotation -= mouseY;
         yRotation += mouseX;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        _cameraAim.localRotation = Quaternion.Euler(xRotation, 0f, 0f);        
+        _cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);     
+        //_cameraAim.localPosition = 
         transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);        
     }
 }

@@ -9,6 +9,7 @@ public class Animations : MonoBehaviour
     private Controls controls;
     private WeaponManager inventory;
     private CoherenceSync _coherenceSync;
+    private RigBuilder _rigBuilder;
 
     [SerializeField] Transform WeaponPose;     
 
@@ -30,6 +31,15 @@ public class Animations : MonoBehaviour
 
     [SerializeField] bool withMainGun;
     [SerializeField] bool withSecondGun;
+
+    public void HandsToGun(Transform left, Transform right)
+    {
+        TwoBoneIKConstraint[] constraints = GetComponentsInChildren<TwoBoneIKConstraint>();
+        constraints[0].data.target = right;
+        constraints[1].data.target = left;
+        _rigBuilder.Build();
+    }
+
     void Start()
     {
         _coherenceSync = GetComponent<CoherenceSync>();
@@ -39,7 +49,7 @@ public class Animations : MonoBehaviour
         inputLeft = 0f;
         inputFwd = 0f;
         _footstepAudio = GetComponent<AudioSource>();
-        
+        _rigBuilder = GetComponent<RigBuilder>();        
     }
 
     void ToAnimator()

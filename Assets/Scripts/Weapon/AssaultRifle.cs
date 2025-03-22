@@ -7,15 +7,13 @@ public class AssaultRifle : BaseWeapon
     protected int _currentAmmo;
     [SerializeField] protected int _maxAmmo;
     [SerializeField] private float _range;
-    //[SerializeField] private Camera _playerCamera;
-    
+    //[SerializeField] private Camera _playerCamera;    
 
     private float _currentCooldown = 0;
 
     private void Start()
     {
-        _currentAmmo = _maxAmmo;
-        
+        _currentAmmo = _maxAmmo;        
     }
 
     public override void Attack()
