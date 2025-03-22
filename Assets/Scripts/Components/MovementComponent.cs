@@ -20,7 +20,7 @@ public class MovementComponent : MonoBehaviour, IInitializable
 
     [Header("Jump")]
     [SerializeField] private float _jumpForce = 3.4f;
-    [SerializeField] private float _gravityForce = -9.81f;  //Делю на 5 из-за скейла модельки
+    [SerializeField] private float _gravityForce = -3f;  //Делю на 5 из-за скейла модельки
     float _jumpUp;
 
     //public Transform spine;    

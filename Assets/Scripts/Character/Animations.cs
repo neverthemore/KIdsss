@@ -18,7 +18,7 @@ public class Animations : MonoBehaviour
     bool isSit;
     float sit;    
 
-    bool isJump;    
+    [SerializeField] bool isJump;    
     float jump;
     
     bool isRun;
@@ -38,8 +38,7 @@ public class Animations : MonoBehaviour
         inventory = GetComponent<WeaponManager>();
         inputLeft = 0f;
         inputFwd = 0f;
-        _footstepAudio = GetComponent<AudioSource>();
-        
+        _footstepAudio = GetComponent<AudioSource>();        
     }
 
     void ToAnimator()
@@ -71,14 +70,13 @@ public class Animations : MonoBehaviour
             inputFwd = controls.GetMoving().y;
         }
         // прыжок не работает:((
-        float raycastDistance = 0.1f;
-        int ground;
-        ground = LayerMask.NameToLayer("ground");
+        float raycastDistance = 1.5f;
+        int ground = LayerMask.GetMask("ground");
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance, ground))
             isJump = false;
         else isJump = true;            
-        jump = isJump ? 1f : 0f;        
+        jump = isJump ? 0f : 1f;        
 
         isSit = controls.GetSit();
         sit = isSit ? 1f : 0f;
@@ -112,8 +110,5 @@ public class Animations : MonoBehaviour
             _footstepAudio.Stop();
         }
         ToAnimator();
-    }
-
-
-  
+    }  
 }
