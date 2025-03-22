@@ -9,6 +9,7 @@ public class Animations : MonoBehaviour
     private Controls controls;
     private WeaponManager inventory;
     private CoherenceSync _coherenceSync;
+    private RigBuilder _rigBuilder;
 
     [SerializeField] Transform WeaponPose;     
 
@@ -38,7 +39,8 @@ public class Animations : MonoBehaviour
         inventory = GetComponent<WeaponManager>();
         inputLeft = 0f;
         inputFwd = 0f;
-        _footstepAudio = GetComponent<AudioSource>();        
+        _footstepAudio = GetComponent<AudioSource>();    
+        _rigBuilder = GetComponent<RigBuilder>();
     }
 
     void ToAnimator()
@@ -54,7 +56,13 @@ public class Animations : MonoBehaviour
         animator.SetBool("secondGun", withSecondGun);
     }
 
-
+    public void HandsToGun(Transform left, Transform right)
+    {
+        TwoBoneIKConstraint[] constraints = GetComponentsInChildren<TwoBoneIKConstraint>();
+        constraints[0].data.target = right;
+        constraints[1].data.target = left;
+        _rigBuilder.Build();
+    }
     void Update()
     {        
         WeaponPose.localEulerAngles = new Vector3 (0f, 0f, 0f);
@@ -69,7 +77,7 @@ public class Animations : MonoBehaviour
             inputLeft = controls.GetMoving().x;
             inputFwd = controls.GetMoving().y;
         }
-        // прыжок не работает:((
+        // прыжок не работает:(( РАБОТАЕТ
         float raycastDistance = 1.5f;
         int ground = LayerMask.GetMask("ground");
         RaycastHit hit;

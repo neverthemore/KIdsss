@@ -23,10 +23,6 @@ public class MovementComponent : MonoBehaviour, IInitializable
     [SerializeField] private float _gravityForce = -3f;  //Делю на 5 из-за скейла модельки
     float _jumpUp;
 
-    //public Transform spine;    
-    //[SerializeField] private Transform head;
-    //public Transform chara;
-
     private CharacterController _characterController;
     public CharacterController CharacterController { get { return _characterController; } } //Анимация
     private CoherenceSync _sync;
