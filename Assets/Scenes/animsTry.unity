@@ -366,6 +366,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7300550018610163683, guid: 6899ff7d40b580c49b15d0c4dff6a5b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000009298325
+      objectReference: {fileID: 0}
     - target: {fileID: 7410436684582398122, guid: 6899ff7d40b580c49b15d0c4dff6a5b4, type: 3}
       propertyPath: m_Name
       value: Room Connection Dialog
@@ -376,6 +380,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7429996265202418019, guid: 6899ff7d40b580c49b15d0c4dff6a5b4, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429996265202418019, guid: 6899ff7d40b580c49b15d0c4dff6a5b4, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7734235527741861920, guid: 6899ff7d40b580c49b15d0c4dff6a5b4, type: 3}
@@ -593,6 +601,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2878662222688325270, guid: 4196f268f2f64f544b26aac65af16061, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1809366
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878662222688325270, guid: 4196f268f2f64f544b26aac65af16061, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.149088
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878662222688325270, guid: 4196f268f2f64f544b26aac65af16061, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -182.06361
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878662222688325270, guid: 4196f268f2f64f544b26aac65af16061, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49018028
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878662222688325270, guid: 4196f268f2f64f544b26aac65af16061, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.48002017
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878662222688325270, guid: 4196f268f2f64f544b26aac65af16061, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5198023
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878662222688325270, guid: 4196f268f2f64f544b26aac65af16061, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.50902814
+      objectReference: {fileID: 0}
     - target: {fileID: 3574002635104592076, guid: 4196f268f2f64f544b26aac65af16061, type: 3}
       propertyPath: m_Name
       value: Cinemachine VC

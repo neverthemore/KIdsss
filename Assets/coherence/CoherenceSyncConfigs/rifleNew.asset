@@ -17,13 +17,13 @@ MonoBehaviour:
   editorTarget: {fileID: 7500142105204857108, guid: 4ed76e0dba994e446be4de4c4e696b42, type: 3}
   includeInSchema: 1
   objectProvider:
-    rid: 8787938438391267799
+    rid: 3372227951766798423
   objectInstantiator:
     rid: 8787938438391267800
   references:
     version: 2
     RefIds:
-    - rid: 8787938438391267799
+    - rid: 3372227951766798423
       type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data:
         prefab: {fileID: 7500142105204857108, guid: 4ed76e0dba994e446be4de4c4e696b42, type: 3}
