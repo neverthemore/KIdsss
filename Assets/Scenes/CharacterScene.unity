@@ -2342,11 +2342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def1ad12e5eafc344863cc8bec4b1d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: "\u0410\u0432\u0442\u043E\u043C\u0430\u0442"
-  _damage: 5
-  _critDamage: 10
-  _durability: 100
-  _attackSpeed: 0.1
+  _playerCamera: {fileID: 0}
+  _weaponData: {fileID: 0}
+  _maxAmmo: 0
+  _range: 0
 --- !u!23 &3488590178166477447
 MeshRenderer:
   m_ObjectHideFlags: 0
