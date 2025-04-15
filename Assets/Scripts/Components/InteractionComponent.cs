@@ -5,14 +5,14 @@ public class InteractionComponent : MonoBehaviour
 {
     //Скрипт для взаимодействия персонажа с миром (например подбор оружия)
     [SerializeField] private float _interactRange = 1f;
-    [SerializeField] private LayerMask _interactableLayers;
+    [SerializeField] private LayerMask _interactableLayers;    
 
     private IInteractable _currentInteractable;
     private Controls _controls;
 
     private void Start()
     {
-        _controls = GetComponent<Controls>();
+        _controls = GetComponent<Controls>();        
     }
 
 
