@@ -20,7 +20,7 @@ namespace Coherence.Generated
 
     public class Definition : IDefinition
     {
-        public const string schemaId = "d2e00296c2dc13dd9c1721b72092eac2904616b0";
+        public const string schemaId = "f582a5b9ef8a3bd5b8502bf3126d92d7edcb56a4";
         public const uint InternalWorldPosition = 0;
         public const uint InternalWorldOrientation = 1;
         public const uint InternalLocalUserComponent = 2;
@@ -174,6 +174,7 @@ namespace Coherence.Generated
         public const uint InternalGenericFieldULong3 = 150;
         public const uint InternalGenericFieldColor0 = 151;
         public const uint InternalGenericFieldColor1 = 152;
+        public const uint Internal_1649b29844b2c644fa407af4a788e555_8065859479899050318 = 153;
         public const uint InternalAuthorityRequest = 0;
         public const uint InternalAuthorityTransfer = 1;
         public const uint InternalQuerySynced = 2;
@@ -181,6 +182,7 @@ namespace Coherence.Generated
         public const uint InternalPersistenceReady = 4;
         public const uint InternalSceneIndexChanged = 5;
         public const uint InternalGenericCommand = 6;
+        public const uint Internal_714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 = 7;
 
         private static readonly Dictionary<uint, string> componentNamesForTypeIds = new Dictionary<uint, string>()
         {
@@ -337,6 +339,7 @@ namespace Coherence.Generated
             { 150, "GenericFieldULong3" },
             { 151, "GenericFieldColor0" },
             { 152, "GenericFieldColor1" },
+            { 153, "_1649b29844b2c644fa407af4a788e555_8065859479899050318" },
         };
 
         public static string ComponentNameForTypeId(uint typeId)
@@ -360,6 +363,7 @@ namespace Coherence.Generated
             { Definition.InternalPersistenceReady , MessageTarget.All },
             { Definition.InternalSceneIndexChanged , MessageTarget.All },
             { Definition.InternalGenericCommand , MessageTarget.All },
+            { Definition.Internal_714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1 , MessageTarget.All },
         };
 
         public ICoherenceComponentData ReadComponentUpdate(uint componentType, AbsoluteSimulationFrame referenceSimulationFrame,
@@ -675,6 +679,8 @@ namespace Coherence.Generated
                     return GenericFieldColor0.Deserialize(referenceSimulationFrame, inProtocolStream);
                 case InternalGenericFieldColor1:
                     return GenericFieldColor1.Deserialize(referenceSimulationFrame, inProtocolStream);
+                case Internal_1649b29844b2c644fa407af4a788e555_8065859479899050318:
+                    return _1649b29844b2c644fa407af4a788e555_8065859479899050318.Deserialize(referenceSimulationFrame, inProtocolStream);
                 default:
                     throw new System.ArgumentOutOfRangeException(nameof(componentType),
                         $"Missing serialization implementation for a component: {componentType}");
@@ -992,6 +998,8 @@ namespace Coherence.Generated
                     return GenericFieldColor0.Serialize((GenericFieldColor0)data, isRefSimFrameValid, referenceSimulationFrame, protocolStream, logger);
                 case InternalGenericFieldColor1:
                     return GenericFieldColor1.Serialize((GenericFieldColor1)data, isRefSimFrameValid, referenceSimulationFrame, protocolStream, logger);
+                case Internal_1649b29844b2c644fa407af4a788e555_8065859479899050318:
+                    return _1649b29844b2c644fa407af4a788e555_8065859479899050318.Serialize((_1649b29844b2c644fa407af4a788e555_8065859479899050318)data, isRefSimFrameValid, referenceSimulationFrame, protocolStream, logger);
                 default:
                     logger.Error(Coherence.Log.Error.DefinitionMissingComponentImplementation, ("component", data.GetComponentType()));
                     return 0;
@@ -1016,6 +1024,8 @@ namespace Coherence.Generated
                     return SceneIndexChanged.Deserialize(bitStream, entity, target);
                 case Definition.InternalGenericCommand:
                     return GenericCommand.Deserialize(bitStream, entity, target);
+                case Definition.Internal_714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1:
+                    return _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1.Deserialize(bitStream, entity, target);
                 default:
                     throw new System.ArgumentOutOfRangeException(nameof(commandType),
                         $"Missing serialization implementation for a command: {commandType}");
@@ -1105,6 +1115,9 @@ namespace Coherence.Generated
                     break;
                 case Definition.InternalGenericCommand:
                     GenericCommand.Serialize((GenericCommand)data, bitStream);
+                    break;
+                case Definition.Internal_714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1:
+                    _714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1.Serialize((_714b9f8fd47e343158014373676f77d0_f7d0f24f474143868d51542322f53fc1)data, bitStream);
                     break;
                 default:
                     logger.Error(Coherence.Log.Error.DefinitionMissingCommandImplementation, ("command", commandType));
