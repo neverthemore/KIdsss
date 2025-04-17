@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f4a509fd2f994fa391c0c78ea3f11, type: 3}
+  m_Name: rifleNew Variant
+  m_EditorClassIdentifier: 
+  id: 9a854a72f5d7d5f4f9203ad28e681c9b
+  selfId: b2205d41b7d6407438d218cee99d2ca8
+  editorTarget: {fileID: 4658466019717312912, guid: 9a854a72f5d7d5f4f9203ad28e681c9b, type: 3}
+  includeInSchema: 1
+  objectProvider:
+    rid: 5645789194332405893
+  objectInstantiator:
+    rid: 5645789194332405894
+  references:
+    version: 2
+    RefIds:
+    - rid: 5645789194332405893
+      type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data:
+        prefab: {fileID: 4658466019717312912, guid: 9a854a72f5d7d5f4f9203ad28e681c9b, type: 3}
+    - rid: 5645789194332405894
+      type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data: 

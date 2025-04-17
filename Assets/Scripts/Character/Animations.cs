@@ -56,16 +56,20 @@ public class Animations : MonoBehaviour
         animator.SetBool("mainGun", withMainGun);
         animator.SetBool("secondGun", withSecondGun);
     }
-
+    public void ReleaseHands()
+    {        
+        _rigBuilder.layers[3].active = false;
+    }
     public void HandsToGun(Transform left, Transform right)
     {
         TwoBoneIKConstraint[] constraints = GetComponentsInChildren<TwoBoneIKConstraint>();
         constraints[0].data.target = right;
         constraints[1].data.target = left;
+        _rigBuilder.layers[3].active = true;
         _rigBuilder.Build();
     }
     void Update()
-    {        
+    {       
         WeaponPose.localEulerAngles = new Vector3 (0f, 0f, 0f);
         if (controls.GetMoving() == new Vector2(0f, 0f))
         {
@@ -77,16 +81,7 @@ public class Animations : MonoBehaviour
         {
             inputLeft = controls.GetMoving().x;
             inputFwd = controls.GetMoving().y;
-        }
-        // прыжок не работает:(( РАБОТАЕТ
-        /*float raycastDistance = 1.5f;
-        int ground = LayerMask.GetMask("ground");
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance, ground))
-            isJump = false;
-        else isJump = true;            
-        jump = isJump ? 0f : 1f;        
-        */
+        }  
 
         isSit = controls.GetSit();
         sit = isSit ? 1f : 0f;

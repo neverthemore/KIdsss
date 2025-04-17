@@ -62,6 +62,10 @@ public class WeaponManager : MonoBehaviour
             Transform rightPlace = GameObject.Find("RightArmSpace").transform;
             _animations.HandsToGun(leftPlace, rightPlace);
         }
+        else
+        {
+            _animations.ReleaseHands();
+        }
     }
 
     private void Attack()

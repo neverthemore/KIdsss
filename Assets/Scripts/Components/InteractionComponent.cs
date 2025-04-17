@@ -4,7 +4,7 @@ using UnityEngine;
 public class InteractionComponent : MonoBehaviour
 {
     //Скрипт для взаимодействия персонажа с миром (например подбор оружия)
-    [SerializeField] private float _interactRange = 1f;
+    [SerializeField] private float _interactRange = 10f;
     [SerializeField] private LayerMask _interactableLayers;    
 
     private IInteractable _currentInteractable;
@@ -13,8 +13,7 @@ public class InteractionComponent : MonoBehaviour
     private void Start()
     {
         _controls = GetComponent<Controls>();        
-    }
-
+    }    
 
     private void Update()
     {
