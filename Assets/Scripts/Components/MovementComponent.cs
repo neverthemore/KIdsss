@@ -21,7 +21,10 @@ public class MovementComponent : MonoBehaviour, IInitializable
     [Header("Jump")]
     [SerializeField] private float _jumpForce = 3.4f;
     [SerializeField] private float _gravityForce = -3f;  //Делю на 5 из-за скейла модельки
-    float _jumpUp;
+    float _jumpUp; public float GetJumpUp()
+    {
+        return _jumpUp;
+    }
 
     private CharacterController _characterController;
     public CharacterController CharacterController { get { return _characterController; } } //Анимация

@@ -33,6 +33,7 @@ public class Animations : MonoBehaviour
     [SerializeField] bool withSecondGun;
     void Start()
     {
+        movement = GetComponent<MovementComponent>();
         _coherenceSync = GetComponent<CoherenceSync>();
         animator = GetComponent<Animator>();        
         controls = GetComponent<Controls>();
@@ -50,7 +51,7 @@ public class Animations : MonoBehaviour
         animator.SetFloat("x", inputLeft);
         animator.SetFloat("y", inputFwd);
         animator.SetFloat("sit", sit);
-        animator.SetFloat("jump", jump);
+        animator.SetFloat("jump", movement.GetJumpUp());
         animator.SetFloat("run", run);        
         animator.SetBool("mainGun", withMainGun);
         animator.SetBool("secondGun", withSecondGun);
@@ -78,13 +79,14 @@ public class Animations : MonoBehaviour
             inputFwd = controls.GetMoving().y;
         }
         // прыжок не работает:(( РАБОТАЕТ
-        float raycastDistance = 1.5f;
+        /*float raycastDistance = 1.5f;
         int ground = LayerMask.GetMask("ground");
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance, ground))
             isJump = false;
         else isJump = true;            
         jump = isJump ? 0f : 1f;        
+        */
 
         isSit = controls.GetSit();
         sit = isSit ? 1f : 0f;
