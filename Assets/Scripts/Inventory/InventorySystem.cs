@@ -34,6 +34,11 @@ public class InventorySystem : MonoBehaviour
             _assaultRifleSlot.AddItem(weapon);
             Debug.Log("Пистолет добавлен в инвентарь");
         }
+        else if (weapon is Bazooka)
+        {
+            _assaultRifleSlot.AddItem(weapon);
+            Debug.Log("Базука добавлена в инвентарь");
+        }
         else if (weapon is MeleeWeapon)
         {
             _meleeWeaponSlot.AddItem(weapon);
