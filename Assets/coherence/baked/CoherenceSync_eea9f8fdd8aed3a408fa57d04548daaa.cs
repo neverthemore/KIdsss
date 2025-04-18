@@ -25,7 +25,7 @@ namespace Coherence.Generated
     using UnityEngine.Scripting;
     
     [UnityEngine.Scripting.Preserve]
-    public class Binding_4ed76e0dba994e446be4de4c4e696b42_732ffe40fca245dd8c0b308b9aa676d1 : PositionBinding
+    public class Binding_eea9f8fdd8aed3a408fa57d04548daaa_11dcf82d0da4429b983112f489eac4cf : PositionBinding
     {   
         private global::UnityEngine.Transform CastedUnityComponent;
 
@@ -76,64 +76,12 @@ namespace Coherence.Generated
             return new WorldPosition();
         }    
     }
-    
-    [UnityEngine.Scripting.Preserve]
-    public class Binding_4ed76e0dba994e446be4de4c4e696b42_08c05396ad344f429ccd008162c0775b : RotationBinding
-    {   
-        private global::UnityEngine.Transform CastedUnityComponent;
-
-        protected override void OnBindingCloned()
-        {
-    	    CastedUnityComponent = (global::UnityEngine.Transform)UnityComponent;
-        }
-
-        public override global::System.Type CoherenceComponentType => typeof(WorldOrientation);
-        public override string CoherenceComponentName => "WorldOrientation";
-        public override uint FieldMask => 0b00000000000000000000000000000001;
-
-        public override UnityEngine.Quaternion Value
-        {
-            get { return (UnityEngine.Quaternion)(coherenceSync.coherenceRotation); }
-            set { coherenceSync.coherenceRotation = (UnityEngine.Quaternion)(value); }
-        }
-
-        protected override (UnityEngine.Quaternion value, AbsoluteSimulationFrame simFrame) ReadComponentData(ICoherenceComponentData coherenceComponent, Vector3 floatingOriginDelta)
-        {
-            var value = ((WorldOrientation)coherenceComponent).value;
-
-            var simFrame = ((WorldOrientation)coherenceComponent).valueSimulationFrame;
-            
-            return (value, simFrame);
-        }
-
-        public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent, AbsoluteSimulationFrame simFrame)
-        {
-            var update = (WorldOrientation)coherenceComponent;
-            if (Interpolator.IsInterpolationNone)
-            {
-                update.value = Value;
-            }
-            else
-            {
-                update.value = GetInterpolatedAt(simFrame / InterpolationSettings.SimulationFramesPerSecond);
-            }
-
-            update.valueSimulationFrame = simFrame;
-            
-            return update;
-        }
-
-        public override ICoherenceComponentData CreateComponentData()
-        {
-            return new WorldOrientation();
-        }    
-    }
 
     [UnityEngine.Scripting.Preserve]
-    public class CoherenceSync_4ed76e0dba994e446be4de4c4e696b42 : CoherenceSyncBaked
+    public class CoherenceSync_eea9f8fdd8aed3a408fa57d04548daaa : CoherenceSyncBaked
     {
         private Entity entityId;
-        private Logger logger = Coherence.Log.Log.GetLogger<CoherenceSync_4ed76e0dba994e446be4de4c4e696b42>();
+        private Logger logger = Coherence.Log.Log.GetLogger<CoherenceSync_eea9f8fdd8aed3a408fa57d04548daaa>();
         
         
         
@@ -142,13 +90,12 @@ namespace Coherence.Generated
         
         private readonly Dictionary<string, Binding> bakedValueBindings = new Dictionary<string, Binding>()
         {
-            ["732ffe40fca245dd8c0b308b9aa676d1"] = new Binding_4ed76e0dba994e446be4de4c4e696b42_732ffe40fca245dd8c0b308b9aa676d1(),
-            ["08c05396ad344f429ccd008162c0775b"] = new Binding_4ed76e0dba994e446be4de4c4e696b42_08c05396ad344f429ccd008162c0775b(),
+            ["11dcf82d0da4429b983112f489eac4cf"] = new Binding_eea9f8fdd8aed3a408fa57d04548daaa_11dcf82d0da4429b983112f489eac4cf(),
         };
         
         private Dictionary<string, Action<CommandBinding, CommandsHandler>> bakedCommandBindings = new Dictionary<string, Action<CommandBinding, CommandsHandler>>();
         
-        public CoherenceSync_4ed76e0dba994e446be4de4c4e696b42()
+        public CoherenceSync_eea9f8fdd8aed3a408fa57d04548daaa()
         {
         }
         
@@ -177,7 +124,7 @@ namespace Coherence.Generated
             {
                 default:
                     logger.Warning(Coherence.Log.Warning.ToolkitBakedSyncReceiveCommandUnhandled,
-                        $"CoherenceSync_4ed76e0dba994e446be4de4c4e696b42 Unhandled command: {command.GetType()}.");
+                        $"CoherenceSync_eea9f8fdd8aed3a408fa57d04548daaa Unhandled command: {command.GetType()}.");
                     break;
             }
         }
@@ -216,7 +163,7 @@ namespace Coherence.Generated
         
         public override void Initialize(Entity entityId, CoherenceBridge bridge, IClient client, CoherenceInput input, Logger logger)
         {
-            this.logger = logger.With<CoherenceSync_4ed76e0dba994e446be4de4c4e696b42>();
+            this.logger = logger.With<CoherenceSync_eea9f8fdd8aed3a408fa57d04548daaa>();
             this.bridge = bridge;
             this.entityId = entityId;
             this.client = client;        

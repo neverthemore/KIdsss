@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 579f4a509fd2f994fa391c0c78ea3f11, type: 3}
-  m_Name: rifleNew Variant
+  m_Name: pivot 1
   m_EditorClassIdentifier: 
-  id: 9a854a72f5d7d5f4f9203ad28e681c9b
-  selfId: b2205d41b7d6407438d218cee99d2ca8
-  editorTarget: {fileID: 4658466019717312912, guid: 9a854a72f5d7d5f4f9203ad28e681c9b, type: 3}
+  id: eea9f8fdd8aed3a408fa57d04548daaa
+  selfId: 516a2f9fa348ed747b1b22e3243df147
+  editorTarget: {fileID: 8744112807403848901, guid: eea9f8fdd8aed3a408fa57d04548daaa, type: 3}
   includeInSchema: 1
   objectProvider:
-    rid: 5645789194332405893
+    rid: 5645789204138688678
   objectInstantiator:
-    rid: 5645789194332405894
+    rid: 5645789204138688667
   references:
     version: 2
     RefIds:
-    - rid: 5645789194332405893
-      type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
-      data:
-        prefab: {fileID: 4658466019717312912, guid: 9a854a72f5d7d5f4f9203ad28e681c9b, type: 3}
-    - rid: 5645789194332405894
+    - rid: 5645789204138688667
       type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data: 
+    - rid: 5645789204138688678
+      type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data:
+        prefab: {fileID: 8744112807403848901, guid: eea9f8fdd8aed3a408fa57d04548daaa, type: 3}

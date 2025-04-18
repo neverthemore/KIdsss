@@ -25,7 +25,7 @@ namespace Coherence.Generated
     using UnityEngine.Scripting;
     
     [UnityEngine.Scripting.Preserve]
-    public class Binding_1649b29844b2c644fa407af4a788e555_31c1c05ac70d40a89ee96ab6de10e930 : PositionBinding
+    public class Binding_3f779af2cc706014eba16a1602352cb1_da9d62197f5643fba4b820741c44d058 : PositionBinding
     {   
         private global::UnityEngine.Transform CastedUnityComponent;
 
@@ -78,10 +78,10 @@ namespace Coherence.Generated
     }
 
     [UnityEngine.Scripting.Preserve]
-    public class CoherenceSync_1649b29844b2c644fa407af4a788e555 : CoherenceSyncBaked
+    public class CoherenceSync_3f779af2cc706014eba16a1602352cb1 : CoherenceSyncBaked
     {
         private Entity entityId;
-        private Logger logger = Coherence.Log.Log.GetLogger<CoherenceSync_1649b29844b2c644fa407af4a788e555>();
+        private Logger logger = Coherence.Log.Log.GetLogger<CoherenceSync_3f779af2cc706014eba16a1602352cb1>();
         
         
         
@@ -90,12 +90,12 @@ namespace Coherence.Generated
         
         private readonly Dictionary<string, Binding> bakedValueBindings = new Dictionary<string, Binding>()
         {
-            ["31c1c05ac70d40a89ee96ab6de10e930"] = new Binding_1649b29844b2c644fa407af4a788e555_31c1c05ac70d40a89ee96ab6de10e930(),
+            ["da9d62197f5643fba4b820741c44d058"] = new Binding_3f779af2cc706014eba16a1602352cb1_da9d62197f5643fba4b820741c44d058(),
         };
         
         private Dictionary<string, Action<CommandBinding, CommandsHandler>> bakedCommandBindings = new Dictionary<string, Action<CommandBinding, CommandsHandler>>();
         
-        public CoherenceSync_1649b29844b2c644fa407af4a788e555()
+        public CoherenceSync_3f779af2cc706014eba16a1602352cb1()
         {
         }
         
@@ -124,7 +124,7 @@ namespace Coherence.Generated
             {
                 default:
                     logger.Warning(Coherence.Log.Warning.ToolkitBakedSyncReceiveCommandUnhandled,
-                        $"CoherenceSync_1649b29844b2c644fa407af4a788e555 Unhandled command: {command.GetType()}.");
+                        $"CoherenceSync_3f779af2cc706014eba16a1602352cb1 Unhandled command: {command.GetType()}.");
                     break;
             }
         }
@@ -163,7 +163,7 @@ namespace Coherence.Generated
         
         public override void Initialize(Entity entityId, CoherenceBridge bridge, IClient client, CoherenceInput input, Logger logger)
         {
-            this.logger = logger.With<CoherenceSync_1649b29844b2c644fa407af4a788e555>();
+            this.logger = logger.With<CoherenceSync_3f779af2cc706014eba16a1602352cb1>();
             this.bridge = bridge;
             this.entityId = entityId;
             this.client = client;        

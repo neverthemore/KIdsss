@@ -177,7 +177,6 @@ namespace Coherence.Generated
                 case 150: return GenericFieldULong3.FromInterop(data, dataSize, simFrames, simFramesCount);
                 case 151: return GenericFieldColor0.FromInterop(data, dataSize, simFrames, simFramesCount);
                 case 152: return GenericFieldColor1.FromInterop(data, dataSize, simFrames, simFramesCount);
-                case 153: return _1649b29844b2c644fa407af4a788e555_8065859479899050318.FromInterop(data, dataSize, simFrames, simFramesCount);
             }
 
             throw new ArgumentException($"Unkown component type {type}", nameof(type));
@@ -1872,23 +1871,6 @@ namespace Coherence.Generated
                     val.value = orig.value;
 
                     updater.UpdateComponent(entity, componentType, val, 16, component.FieldsMask, component.StoppedMask, frames);
-
-                    return;
-                }
-                case 153:
-                {
-                    var orig = (_1649b29844b2c644fa407af4a788e555_8065859479899050318)component;
-                    var val = new _1649b29844b2c644fa407af4a788e555_8065859479899050318.Interop();
-
-                    val.y = orig.y;
-                    val.jump = orig.jump;
-                    val.run = orig.run;
-                    val.mainGun = orig.mainGun ? (System.Byte)1 : (System.Byte)0;
-                    val.secondGun = orig.secondGun ? (System.Byte)1 : (System.Byte)0;
-                    val.sit = orig.sit;
-                    val.x = orig.x;
-
-                    updater.UpdateComponent(entity, componentType, val, 22, component.FieldsMask, component.StoppedMask, frames);
 
                     return;
                 }
