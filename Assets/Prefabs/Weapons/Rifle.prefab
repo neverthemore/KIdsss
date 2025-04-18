@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2417327057853415985}
   m_Layer: 6
-  m_Name: RightArmPlace
+  m_Name: RightArmSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6844947545991830662}
   m_Layer: 6
-  m_Name: LeftArmPlace
+  m_Name: LeftArmSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
