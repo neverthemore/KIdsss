@@ -57,9 +57,9 @@ public class WeaponManager : MonoBehaviour
         if (_currentState.Item != null)
         {
             _currentState?.Activate(_weaponParent);
-
-            Transform leftPlace = GameObject.Find("LeftArmSpace").transform;
-            Transform rightPlace = GameObject.Find("RightArmSpace").transform;
+            Transform weapon = transform.Find("WeaponPoint").GetChild(0).GetChild(0);
+            Transform leftPlace = weapon.Find("LeftArmSpace");
+            Transform rightPlace = weapon.Find("RightArmSpace");
             _animations.HandsToGun(leftPlace, rightPlace);
         }
         else

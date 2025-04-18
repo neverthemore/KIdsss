@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.UI;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class InventorySystem : MonoBehaviour
         {
             _assaultRifleSlot.AddItem(weapon);
             Debug.Log("Автомат добавлен в инвентарь"); //По хорошему лучше сделать логику добавления оружия у самого оружия (например как метод PickUp у оружия)
+        }
+        else if (weapon is Pistol)
+        {
+            _assaultRifleSlot.AddItem(weapon);
+            Debug.Log("Пистолет добавлен в инвентарь");
         }
         else if (weapon is MeleeWeapon)
         {

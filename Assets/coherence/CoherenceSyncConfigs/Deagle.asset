@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 579f4a509fd2f994fa391c0c78ea3f11, type: 3}
-  m_Name: '[local] Player'
+  m_Name: Deagle
   m_EditorClassIdentifier: 
-  id: 41e3f675392d55e46b00a024a19d4f0b
-  selfId: f0c1bb8ec450df2499722a1321ed2ce1
-  editorTarget: {fileID: 3673452085603842805, guid: 41e3f675392d55e46b00a024a19d4f0b, type: 3}
+  id: 7432512daf1dcf14dbb49bc11ed77aad
+  selfId: 60cdcfd0bc5062b4a817d680ca3156ea
+  editorTarget: {fileID: 2806536291524135973, guid: 7432512daf1dcf14dbb49bc11ed77aad, type: 3}
   includeInSchema: 1
   objectProvider:
-    rid: 5645789204138688610
+    rid: 5645789215903973454
   objectInstantiator:
-    rid: 5645789204138688611
+    rid: 5645789215903973455
   references:
     version: 2
     RefIds:
-    - rid: 5645789204138688610
+    - rid: 5645789215903973454
       type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data:
-        prefab: {fileID: 3673452085603842805, guid: 41e3f675392d55e46b00a024a19d4f0b, type: 3}
-    - rid: 5645789204138688611
+        prefab: {fileID: 2806536291524135973, guid: 7432512daf1dcf14dbb49bc11ed77aad, type: 3}
+    - rid: 5645789215903973455
       type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data: 

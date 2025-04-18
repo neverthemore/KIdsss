@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35a39dce6e0f52c4b9bb1ae67e69c3c1, type: 3}
-  m_Name: AssaultRifle
+  m_Name: Deagle
   m_EditorClassIdentifier: 
-  _weaponPrefab: {fileID: 8744112807403848901, guid: eea9f8fdd8aed3a408fa57d04548daaa, type: 3}
-  _name: "\u0410\u0432\u0442\u043E\u043C\u0430\u0442"
-  _damage: 10
-  _critDamage: 20
+  _weaponPrefab: {fileID: 2806536291524135973, guid: 7432512daf1dcf14dbb49bc11ed77aad, type: 3}
+  _name: "\u041F\u0438\u0441\u0442\u043E\u043B\u0435\u0442"
+  _damage: 0
+  _critDamage: 0
   _durability: 0
-  _attackSpeed: 0.1
-  _icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  _attackSpeed: 0
+  _icon: {fileID: 0}
