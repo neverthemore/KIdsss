@@ -50,6 +50,26 @@ public class PlayerHandler : MonoBehaviour
         initialPosition.y = transform.position.y;
         return initialPosition;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, spawnRadius);
+
+        // Отрисовка точек спавна
+        if (spawnPoints != null && spawnPoints.Length > 0)
+        {
+            Gizmos.color = Color.cyan;
+            foreach (Transform spawnPoint in spawnPoints)
+            {
+                if (spawnPoint != null)
+                {
+                    Gizmos.DrawWireSphere(spawnPoint.position, 0.3f);
+                }
+            }
+        }
+    }
     private void SpawnPlayer()
     {
         Vector3 spawnPosition = GetRandomSpawnPosition();
@@ -98,9 +118,5 @@ public class PlayerHandler : MonoBehaviour
         _bridge.onDisconnected.RemoveListener(OnDisconnection);
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(transform.position, spawnRadius);
-    }
 }
 
