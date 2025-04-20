@@ -171,6 +171,15 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BreakGun"",
+                    ""type"": ""Button"",
+                    ""id"": ""18e41f06-27eb-4619-b29a-b0d4b46ba59a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -316,6 +325,17 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""SecondGun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1663f566-402e-4be2-bce8-c2785a32ea5f"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BreakGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -333,6 +353,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_MainGun = m_Player.FindAction("MainGun", throwIfNotFound: true);
         m_Player_SecondGun = m_Player.FindAction("SecondGun", throwIfNotFound: true);
+        m_Player_BreakGun = m_Player.FindAction("BreakGun", throwIfNotFound: true);
     }
 
     ~@InputSystem()
@@ -422,6 +443,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_MainGun;
     private readonly InputAction m_Player_SecondGun;
+    private readonly InputAction m_Player_BreakGun;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -469,6 +491,10 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/SecondGun".
         /// </summary>
         public InputAction @SecondGun => m_Wrapper.m_Player_SecondGun;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/BreakGun".
+        /// </summary>
+        public InputAction @BreakGun => m_Wrapper.m_Player_BreakGun;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -522,6 +548,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @SecondGun.started += instance.OnSecondGun;
             @SecondGun.performed += instance.OnSecondGun;
             @SecondGun.canceled += instance.OnSecondGun;
+            @BreakGun.started += instance.OnBreakGun;
+            @BreakGun.performed += instance.OnBreakGun;
+            @BreakGun.canceled += instance.OnBreakGun;
         }
 
         /// <summary>
@@ -560,6 +589,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @SecondGun.started -= instance.OnSecondGun;
             @SecondGun.performed -= instance.OnSecondGun;
             @SecondGun.canceled -= instance.OnSecondGun;
+            @BreakGun.started -= instance.OnBreakGun;
+            @BreakGun.performed -= instance.OnBreakGun;
+            @BreakGun.canceled -= instance.OnBreakGun;
         }
 
         /// <summary>
@@ -663,5 +695,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSecondGun(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "BreakGun" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBreakGun(InputAction.CallbackContext context);
     }
 }

@@ -5,22 +5,18 @@ public class InventorySystem : MonoBehaviour
 {
     private ItemState _assaultRifleSlot;
     private ItemState _meleeWeaponSlot;
+    private ItemState _itemSlot;
 
     public ItemState AssaulsRifleSlot { get { return _assaultRifleSlot; } }
     public ItemState MeleeWeaponSlot { get { return _meleeWeaponSlot; } }
+    public ItemState ItemSlot { get { return _meleeWeaponSlot; } }
 
     private void Start()
     {
         _assaultRifleSlot = new ItemState();
         _meleeWeaponSlot = new ItemState();
-    }
-
-    /*
-    private InventorySystem()   Конуструкторы не работают
-    {
-        _assaultRifleSlot = new ItemState();
-        _meleeWeaponSlot = new ItemState();
-    }*/ 
+        _itemSlot = new ItemState();
+    }  
 
     public void AddWeapon(BaseWeapon weapon)
     {
@@ -45,4 +41,5 @@ public class InventorySystem : MonoBehaviour
             Debug.Log("Нож добавлен в инвентарь");
         }
     }
+    
 }

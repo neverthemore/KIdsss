@@ -32,10 +32,10 @@ public class WeaponManager : MonoBehaviour
 
     private void HandleWeaponSwitchInput()
     {
-        if (_controls.GetMainWeapon())  //“ут сделать через Controls, сейчас сделано через кейпад
-        {//сделал через controls
+        if (_controls.GetMainWeapon())
+        {
             if (_inventorySystem.AssaulsRifleSlot.Item != null)
-            SwitchWeapon(_inventorySystem.AssaulsRifleSlot);
+                SwitchWeapon(_inventorySystem.AssaulsRifleSlot);
         }
         if (_controls.GetSecondWeapon())
         {
@@ -44,13 +44,25 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
+    private void BreakMainWeapon()
+    {
+        if (_inventorySystem.AssaulsRifleSlot.Item != null &&
+            _currentState.Item is not MeleeWeapon)
+        {
+            if (_controls.GetBreakingOfGun())
+            {
+                //логика по убиранию мейн предмета и замене милишки    
+            }
+        }
+    }
+
     private void SwitchWeapon(ItemState newWeapon)
     {
         if (_currentState != null)
-        if (_currentState.Item != null)
-        {
-            _currentState.Deactivate();
-        }
+            if (_currentState.Item != null)
+            {
+                _currentState.Deactivate();
+            }
 
         _currentState = newWeapon; //ƒобавить проверку на то, не €вл€етс€ ли текущим оружием
 
@@ -66,7 +78,7 @@ public class WeaponManager : MonoBehaviour
         {
             _animations.ReleaseHands();
         }
-    }
+    }   
 
     private void Attack()
     {

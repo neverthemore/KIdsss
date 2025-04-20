@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Pistol : BaseWeapon
+public class Pistol : MainWeapon
 {
     protected int _currentAmmo;
     protected int _maxAmmo;

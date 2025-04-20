@@ -46,7 +46,11 @@ public class Controls : MonoBehaviour
         bool withSecondGun = inputActions.Player.SecondGun.IsPressed();
         return withSecondGun;
     }
-
+    public bool GetBreakingOfGun()
+    {
+        bool isBreaking = inputActions.Player.BreakGun.IsPressed();
+        return isBreaking;
+    }
     void Awake()
     {
         inputActions = new InputSystem();

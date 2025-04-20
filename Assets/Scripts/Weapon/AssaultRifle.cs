@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class AssaultRifle : BaseWeapon
+public class AssaultRifle : MainWeapon
 {
     protected int _currentAmmo;
     [SerializeField] protected int _maxAmmo;
@@ -14,8 +14,7 @@ public class AssaultRifle : BaseWeapon
 
     private void Start()
     {
-        _currentAmmo = _maxAmmo;
-        
+        _currentAmmo = _maxAmmo;        
     }
 
     public override void Attack()
