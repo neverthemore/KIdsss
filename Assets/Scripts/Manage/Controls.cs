@@ -48,7 +48,7 @@ public class Controls : MonoBehaviour
     }
     public bool GetBreakingOfGun()
     {
-        bool isBreaking = inputActions.Player.BreakGun.IsPressed();
+        bool isBreaking = inputActions.Player.BreakGun.triggered;
         return isBreaking;
     }
     void Awake()

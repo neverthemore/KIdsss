@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class BaseWeapon : MonoBehaviour
 {
     //Базовый абстрактный класс для оружия
-    //[Header("Set in inspector")]
+    //[Header("Set in inspector")]    
     [SerializeField] public GameObject _playerCamera;
     public WeaponData _weaponData;
    

@@ -17,16 +17,16 @@ MonoBehaviour:
   editorTarget: {fileID: 2806536291524135973, guid: 7432512daf1dcf14dbb49bc11ed77aad, type: 3}
   includeInSchema: 1
   objectProvider:
-    rid: 5645789215903973454
+    rid: 5645789263118991507
   objectInstantiator:
     rid: 5645789215903973455
   references:
     version: 2
     RefIds:
-    - rid: 5645789215903973454
-      type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
-      data:
-        prefab: {fileID: 2806536291524135973, guid: 7432512daf1dcf14dbb49bc11ed77aad, type: 3}
     - rid: 5645789215903973455
       type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data: 
+    - rid: 5645789263118991507
+      type: {class: ResourcesProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data:
+        resourcesPath: Prefabs/Weapons/Deagle

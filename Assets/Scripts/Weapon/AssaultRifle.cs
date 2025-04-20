@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 public class AssaultRifle : MainWeapon
-{
+{    
     protected int _currentAmmo;
     [SerializeField] protected int _maxAmmo;
     [SerializeField] private float _range;

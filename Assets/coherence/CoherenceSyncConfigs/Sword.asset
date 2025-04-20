@@ -17,16 +17,16 @@ MonoBehaviour:
   editorTarget: {fileID: 3444641281699926256, guid: d20c667d7237b7b43a7d99227afd39ce, type: 3}
   includeInSchema: 1
   objectProvider:
-    rid: 5645789263118991463
+    rid: 5645789263118991506
   objectInstantiator:
     rid: 5645789263118991464
   references:
     version: 2
     RefIds:
-    - rid: 5645789263118991463
-      type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
-      data:
-        prefab: {fileID: 3444641281699926256, guid: d20c667d7237b7b43a7d99227afd39ce, type: 3}
     - rid: 5645789263118991464
       type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data: 
+    - rid: 5645789263118991506
+      type: {class: ResourcesProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data:
+        resourcesPath: Prefabs/Weapons/Sword

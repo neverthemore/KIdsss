@@ -316,6 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerCamera: {fileID: 0}
   _weaponData: {fileID: 11400000, guid: 5ad985cb828235448b325700a03abb48, type: 2}
+  ownMeleeWeapon: {fileID: 5202367019183028036, guid: d20c667d7237b7b43a7d99227afd39ce, type: 3}
   _maxAmmo: 100
   _range: 1000
 --- !u!65 &4506715858409705039

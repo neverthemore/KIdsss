@@ -20,25 +20,15 @@ public class InventorySystem : MonoBehaviour
 
     public void AddWeapon(BaseWeapon weapon)
     {
-        if (weapon is AssaultRifle)
+        if (weapon is MainWeapon)
         {
             _assaultRifleSlot.AddItem(weapon);
-            Debug.Log("Автомат добавлен в инвентарь"); //По хорошему лучше сделать логику добавления оружия у самого оружия (например как метод PickUp у оружия)
-        }
-        else if (weapon is Pistol)
-        {
-            _assaultRifleSlot.AddItem(weapon);
-            Debug.Log("Пистолет добавлен в инвентарь");
-        }
-        else if (weapon is Bazooka)
-        {
-            _assaultRifleSlot.AddItem(weapon);
-            Debug.Log("Базука добавлена в инвентарь");
-        }
+            Debug.Log("Основное оружие добавлено в инвентарь"); //По хорошему лучше сделать логику добавления оружия у самого оружия (например как метод PickUp у оружия)
+        }        
         else if (weapon is MeleeWeapon)
         {
             _meleeWeaponSlot.AddItem(weapon);
-            Debug.Log("Нож добавлен в инвентарь");
+            Debug.Log("Вторичное оружие добавлено в инвентарь");
         }
     }
     

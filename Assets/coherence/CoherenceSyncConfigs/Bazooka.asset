@@ -17,16 +17,16 @@ MonoBehaviour:
   editorTarget: {fileID: 5359350682859136519, guid: 11f5ae4ac54e35147863e6c4f03f1fb9, type: 3}
   includeInSchema: 1
   objectProvider:
-    rid: 5645789215903973486
+    rid: 5645789263118991504
   objectInstantiator:
     rid: 5645789215903973487
   references:
     version: 2
     RefIds:
-    - rid: 5645789215903973486
-      type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
-      data:
-        prefab: {fileID: 5359350682859136519, guid: 11f5ae4ac54e35147863e6c4f03f1fb9, type: 3}
     - rid: 5645789215903973487
       type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data: 
+    - rid: 5645789263118991504
+      type: {class: ResourcesProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data:
+        resourcesPath: Prefabs/Weapons/Bazooka

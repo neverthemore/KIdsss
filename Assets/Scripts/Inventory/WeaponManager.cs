@@ -1,3 +1,4 @@
+//using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
@@ -23,7 +24,11 @@ public class WeaponManager : MonoBehaviour
     private void Update()
     {
         HandleWeaponSwitchInput();
-        
+        if (_controls.GetBreakingOfGun())
+        {
+            BreakMainWeapon();
+        }
+            
         if (_controls.GetFire())
         {
             Attack();
@@ -41,18 +46,30 @@ public class WeaponManager : MonoBehaviour
         {
             if (_inventorySystem.MeleeWeaponSlot.Item != null)
                 SwitchWeapon(_inventorySystem.MeleeWeaponSlot);
+            else Debug.Log("во втором слоте ничего");
         }
     }
 
     private void BreakMainWeapon()
     {
         if (_inventorySystem.AssaulsRifleSlot.Item != null &&
-            _currentState.Item is not MeleeWeapon)
+            _currentState.Item is MainWeapon)
         {
-            if (_controls.GetBreakingOfGun())
-            {
-                //логика по убиранию мейн предмета и замене милишки    
+            if (_currentState.Item is AssaultRifle)
+            {           
+                //добавить милишку
+                GameObject swordPrefab = Resources.Load<GameObject>("Prefabs/Weapons/Sword");
+                if (swordPrefab != null)
+                {
+                    GameObject spawnedSword = Instantiate(swordPrefab, transform.position, Quaternion.identity);
+                    spawnedSword.transform.SetParent(_weaponParent);
+                    Sword tempMeleeWeapon = spawnedSword.GetComponent<Sword>();
+                    _inventorySystem.AddWeapon(tempMeleeWeapon);
+                }
+                //поменять слот
+                SwitchWeapon(_inventorySystem.MeleeWeaponSlot);
             }
+            Debug.Log("Замена основного оружия");
         }
     }
 

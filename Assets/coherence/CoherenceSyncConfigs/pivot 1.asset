@@ -17,7 +17,7 @@ MonoBehaviour:
   editorTarget: {fileID: 8744112807403848901, guid: eea9f8fdd8aed3a408fa57d04548daaa, type: 3}
   includeInSchema: 1
   objectProvider:
-    rid: 5645789204138688678
+    rid: 5645789263118991508
   objectInstantiator:
     rid: 5645789204138688667
   references:
@@ -26,7 +26,7 @@ MonoBehaviour:
     - rid: 5645789204138688667
       type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data: 
-    - rid: 5645789204138688678
-      type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+    - rid: 5645789263118991508
+      type: {class: ResourcesProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data:
-        prefab: {fileID: 8744112807403848901, guid: eea9f8fdd8aed3a408fa57d04548daaa, type: 3}
+        resourcesPath: Prefabs/Weapons/Rifle
